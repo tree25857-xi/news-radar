@@ -379,7 +379,7 @@ def _generate_stat_badges(stats: Dict) -> List[str]:
 def _generate_category_sections(categorized: Dict) -> List[str]:
     """Generate category sections HTML"""
     sections = []
-    for cat in ["AI", "網路安全", "科技", "經濟", "國際"]:
+    for cat in ["AI", "網路安全", "科技", "經濟", "國際", "金融"]:
         articles = categorized.get(cat, [])
         if not articles:
             continue
