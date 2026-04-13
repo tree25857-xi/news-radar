@@ -1,0 +1,7 @@
+# NewsRadar Dependencies
+feedparser>=6.0.0
+googletrans==4.0.0-rc1
+requests>=2.31.0
+
+# Optional: Groq AI for summarization (uncomment when API key available)
+# groq>=0.4.0

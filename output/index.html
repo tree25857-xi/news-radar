@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsRadar - 新聞雷達</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --bg: #0f0f23;
+            --card-bg: #1a1a3e;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --hover: #1e293b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .stats-bar {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .stats-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .stats-left {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        
+        .stat-badge:hover {
+            transform: translateY(-2px);
+        }
+        
+        .last-update {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid;
+        }
+        
+        .category-icon {
+            font-size: 1.8rem;
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .category-count {
+            background: var(--text-muted);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-left: auto;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .article-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        
+        .article-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        .article-time {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+        
+        .article-title {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+            flex-grow: 1;
+        }
+        
+        .article-title a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .article-title a:hover {
+            color: var(--primary);
+        }
+        
+        .article-translated {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: var(--hover);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+        
+        .article-description {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .article-summary {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #0369a1;
+        }
+        
+        .article-summary-label {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+        
+        .refresh-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .refresh-btn:hover {
+            background: #1d4ed8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8rem; }
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .category-section {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .category-section:nth-child(1) { animation-delay: 0.1s; }
+        .category-section:nth-child(2) { animation-delay: 0.2s; }
+        .category-section:nth-child(3) { animation-delay: 0.3s; }
+        .category-section:nth-child(4) { animation-delay: 0.4s; }
+        .category-section:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>📡 NewsRadar 新聞雷達</h1>
+            <p>AI 驅動的新聞聚合平台 | 掌握全球最新資訊</p>
+        </div>
+    </header>
+    
+    <div class="stats-bar">
+        <div class="stats-content">
+            <div class="stats-left">
+                <span class="stat-badge" style="background: #0c1929; color: #60a5fa;">💻 科技: 144</span><span class="stat-badge" style="background: #422006; color: #fbbf24;">🌍 國際: 74</span><span class="stat-badge" style="background: #1e1b4b; color: #a78bfa;">🤖 AI: 176</span><span class="stat-badge" style="background: #4a0519; color: #f87171;">🔒 網路安全: 63</span><span class="stat-badge" style="background: #022c22; color: #34d399;">📈 經濟: 8</span>
+            </div>
+            <div class="last-update">
+                🔄 更新時間: 2026-04-13 15:58:54
+            </div>
+        </div>
+    </div>
+    
+    <main class="main-content">
+        
+        <section class="category-section">
+            <div class="category-header" style="border-color: #a78bfa;">
+                <span class="category-icon">🤖</span>
+                <h2 class="category-title">AI</h2>
+                <span class="category-count" style="background: #a78bfa;">176 篇</span>
+            </div>
+            <div class="articles-grid">
+                
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/13 06:05</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/sports/2026/4/13/sinner-beats-alcaraz-in-straight-sets-to-win-monte-carlo-reclaim-no-1-spot?traffic_source=rss" target="_blank" rel="noopener">Sinner beats Alcaraz in straight sets to win Monte Carlo; reclaim No.1 spot</a>
+        </h3>
+        
+        <div class="article-description">Jannik Sinner continues his title-winning run with a 7-6(5) 6-3 triumph and grabs top spot in ATP rankings.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">BBC World</span>
+            <span class="article-time">04/13 05:24</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.bbc.com/news/articles/cn781z4lgg4o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Oil back above $100 as US to blockade Iranian ports after peace talks fail</a>
+        </h3>
+        
+        <div class="article-description">The failure of negotiations at the weekend has raised concerns that the global energy crisis will deepen.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/13 04:46</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/54003e09-03dd-4a45-90d3-98354f8aadfb" target="_blank" rel="noopener">The risks of Trump’s Strait of Hormuz blockade plan</a>
+        </h3>
+        
+        <div class="article-description">Naval embargo designed to cut off Iran’s exports threatens to destabilise global energy markets</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08601" target="_blank" rel="noopener">OpenKedge: Governing Agentic Mutation with Execution-Bound Safety and Evidence Chains</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08601v1 Announce Type: new Abstract: The rise of autonomous AI agents exposes a fundamental flaw in API-centric architectures: probabilistic systems directly execute state mutations without sufficient context, coordination, or safety guarantees. We introduce OpenKedge, a protocol that redefines mutation as a governed process rather than an immediate consequence of API invocation. OpenKedge requires actors to submit declarative intent proposals, which are evaluated against deterministi</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08603" target="_blank" rel="noopener">From Business Events to Auditable Decisions: Ontology-Governed Graph Simulation for Enterprise AI</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08603v1 Announce Type: new Abstract: Existing LLM-based agent systems share a common architectural failure: they answer from the unrestricted knowledge space without first simulating how active business scenarios reshape that space for the event at hand -- producing decisions that are fluent but ungrounded and carrying no audit trail. We present LOM-action, which equips enterprise AI with \emph{event-driven ontology simulation}: business events trigger scenario conditions encoded in t</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08621" target="_blank" rel="noopener">Sustained Impact of Agentic Personalisation in Marketing: A Longitudinal Case Study</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08621v1 Announce Type: new Abstract: In consumer applications, Customer Relationship Management (CRM) has traditionally relied on the manual optimisation of static, rule-based messaging strategies. While adaptive and autonomous learning systems offer the promise of scalable personalisation, it remains unclear to what extent ``human-in-the-loop'' oversight is required to sustain performance uplift over time. This paper presents a longitudinal case study analysing a real-world consumer </div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08685" target="_blank" rel="noopener">RAMP: Hybrid DRL for Online Learning of Numeric Action Models</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08685v1 Announce Type: new Abstract: Automated planning algorithms require an action model specifying the preconditions and effects of each action, but obtaining such a model is often hard. Learning action models from observations is feasible, but existing algorithms for numeric domains are offline, requiring expert traces as input. We propose the Reinforcement learning, Action Model learning, and Planning (RAMP) strategy for learning numeric planning action models online via interact</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08712" target="_blank" rel="noopener">Model Space Reasoning as Search in Feedback Space for Planning Domain Generation</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08712v1 Announce Type: new Abstract: The generation of planning domains from natural language descriptions remains an open problem even with the advent of large language models and reasoning models. Recent work suggests that while LLMs have the ability to assist with domain generation, they are still far from producing high quality domains that can be deployed in practice. To this end, we investigate the ability of an agentic language model feedback framework to generate planning doma</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08756" target="_blank" rel="noopener">Artifacts as Memory Beyond the Agent Boundary</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08756v1 Announce Type: new Abstract: The situated view of cognition holds that intelligent behavior depends not only on internal memory, but on an agent's active use of environmental resources. Here, we begin formalizing this intuition within Reinforcement Learning (RL). We introduce a mathematical framing for how the environment can functionally serve as an agent's memory, and prove that certain observations, which we call artifacts, can reduce the information needed to represent his</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08865" target="_blank" rel="noopener">SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08865v1 Announce Type: new Abstract: Proximal Policy Optimization (PPO) is central to aligning Large Language Models (LLMs) in reasoning tasks with verifiable rewards. However, standard token-level PPO struggles in this setting due to the instability of temporal credit assignment over long Chain-of-Thought (CoT) horizons and the prohibitive memory cost of the value model. While critic-free alternatives like GRPO mitigate these issues, they incur significant computational overhead by r</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08931" target="_blank" rel="noopener">Enhancing LLM Problem Solving via Tutor-Student Multi-Agent Interaction</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08931v1 Announce Type: new Abstract: Human cognitive development is shaped not only by individual effort but by structured social interaction, where role-based exchanges such as those between a tutor and a learner, enable solutions that neither could achieve alone. Inspired by these developmental principles, we ask the question whether a tutor-student multi-agent system can create a synergistic effect by pushing Large Language Model (LLM) beyond what it can do within existing framewor</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08987" target="_blank" rel="noopener">PilotBench: A Benchmark for General Aviation Agents with Safety Constraints</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08987v1 Announce Type: new Abstract: As Large Language Models (LLMs) advance toward embodied AI agents operating in physical environments, a fundamental question emerges: can models trained on text corpora reliably reason about complex physics while adhering to safety constraints? We address this through PilotBench, a benchmark evaluating LLMs on safety-critical flight trajectory and attitude prediction. Built from 708 real-world general aviation trajectories spanning nine operational</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08988" target="_blank" rel="noopener">SEA-Eval: A Benchmark for Evaluating Self-Evolving Agents Beyond Episodic Assessment</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08988v1 Announce Type: new Abstract: Current LLM-based agents demonstrate strong performance in episodic task execution but remain constrained by static toolsets and episodic amnesia, failing to accumulate experience or optimize strategies across task boundaries. While the Self-Evolving Agent (SEA) paradigm has been previously proposed, this paper contributes a new formal definition of SEA grounded in digital embodiment and continuous cross-task evolution, and introduces SEA-Eval, the</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09001" target="_blank" rel="noopener">Hypergraph Neural Networks Accelerate MUS Enumeration</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09001v1 Announce Type: new Abstract: Enumerating Minimal Unsatisfiable Subsets (MUSes) is a fundamental task in constraint satisfaction problems (CSPs). Its major challenge is the exponential growth of the search space, which becomes particularly severe when satisfiability checks are expensive. Recent machine learning approaches reduce this cost for Boolean satisfiability problems but rely on explicit variable-constraint relationships, limiting their application domains. This paper pr</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09072" target="_blank" rel="noopener">Overhang Tower: Resource-Rational Adaptation in Sequential Physical Planning</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09072v1 Announce Type: new Abstract: Humans effortlessly navigate the physical world by predicting how objects behave under gravity and contact forces, yet how such judgments support sequential physical planning under resource constraints remains poorly understood. Research on intuitive physics debates whether prediction relies on the Intuitive Physics Engine (IPE) or fast, cue-based heuristics; separately, decision-making research debates deliberative lookahead versus myopic strategi</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09285" target="_blank" rel="noopener">SAGE: A Service Agent Graph-guided Evaluation Benchmark</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09285v1 Announce Type: new Abstract: The development of Large Language Models (LLMs) has catalyzed automation in customer service, yet benchmarking their performance remains challenging. Existing benchmarks predominantly rely on static paradigms and single-dimensional metrics, failing to account for diverse user behaviors or the strict adherence to structured Standard Operating Procedures (SOPs) required in real-world deployments. To bridge this gap, we propose SAGE (Service Agent Gra</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09455" target="_blank" rel="noopener">E3-TIR: Enhanced Experience Exploitation for Tool-Integrated Reasoning</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09455v1 Announce Type: new Abstract: While Large Language Models (LLMs) have demonstrated significant potential in Tool-Integrated Reasoning (TIR), existing training paradigms face significant limitations: Zero-RL suffers from inefficient exploration and mode degradation due to a lack of prior guidance, while SFT-then-RL is limited by high data costs and capability plateaus caused by low-entropy collapse. To address these challenges, we propose E3-TIR (Enhanced Experience Exploitation</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09502" target="_blank" rel="noopener">Strategic Algorithmic Monoculture:Experimental Evidence from Coordination Games</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09502v1 Announce Type: new Abstract: AI agents increasingly operate in multi-agent environments where outcomes depend on coordination. We distinguish primary algorithmic monoculture -- baseline action similarity -- from strategic algorithmic monoculture, whereby agents adjust similarity in response to incentives. We implement a simple experimental design that cleanly separates these forces, and deploy it on human and large language model (LLM) subjects. LLMs exhibit high levels of bas</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2410.09355" target="_blank" rel="noopener">On Divergence Measures for Training GFlowNets</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2410.09355v2 Announce Type: cross Abstract: Generative Flow Networks (GFlowNets) are amortized inference models designed to sample from unnormalized distributions over composable objects, with applications in generative modeling for tasks in fields such as causal discovery, NLP, and drug discovery. Traditionally, the training procedure for GFlowNets seeks to minimize the expected log-squared difference between a proposal (forward policy) and a target (backward policy) distribution, which e</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08362" target="_blank" rel="noopener">Towards Real-world Human Behavior Simulation: Benchmarking Large Language Models on Long-horizon, Cross-scenario, Heterogeneous Behavior Traces</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08362v1 Announce Type: cross Abstract: The emergence of Large Language Models (LLMs) has illuminated the potential for a general-purpose user simulator. However, existing benchmarks remain constrained to isolated scenarios, narrow action spaces, or synthetic data, failing to capture the holistic nature of authentic human behavior. To bridge this gap, we introduce OmniBehavior, the first user simulation benchmark constructed entirely from real-world data, integrating long-horizon, cros</div>
+        
+    </article>
+    
+            </div>
+        </section>
+        
+        <section class="category-section">
+            <div class="category-header" style="border-color: #f87171;">
+                <span class="category-icon">🔒</span>
+                <h2 class="category-title">網路安全</h2>
+                <span class="category-count" style="background: #f87171;">63 篇</span>
+            </div>
+            <div class="articles-grid">
+                
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08905" target="_blank" rel="noopener">StaRPO: Stability-Augmented Reinforcement Policy Optimization</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08905v1 Announce Type: new Abstract: Reinforcement learning (RL) is effective in enhancing the accuracy of large language models in complex reasoning tasks. Existing RL policy optimization frameworks rely on final-answer correctness as feedback signals and rarely capture the internal logical structure of the reasoning process. Consequently, the models would generate fluent and semantically relevant responses but logically inconsistent, structurally erratic, or redundant. To this end, </div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">VentureBeat</span>
+            <span class="article-time">04/12 19:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://venturebeat.com/security/five-signs-data-drift-is-already-undermining-your-security-models" target="_blank" rel="noopener">Five signs data drift is already undermining your security models</a>
+        </h3>
+        
+        <div class="article-description">Data drift happens when the statistical properties of a machine learning (ML) model&#x27;s input data change over time, eventually rendering its predictions less accurate. Cybersecurity professionals who rely on ML for tasks like malware detection and network threat analysis find that undetected data drift can create vulnerabilities. A model trained on old attack patterns may fail to see today&#x27;s sophisticated threats. Recognizing the early signs of data drift is the first step in maintainin</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">The Verge</span>
+            <span class="article-time">04/12 17:02</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.theverge.com/games/910815/rockstar-games-says-hack-will-have-no-impact" target="_blank" rel="noopener">Rockstar Games says hack will have ‘no impact’</a>
+        </h3>
+        
+        <div class="article-description">Rockstar confirmed on Saturday that some of its data was compromised in a breach of a third-party provider. The group ShinyHunters claimed responsibility, saying it had gained access to the company's Snowflake instances (a cloud-hosting provider popular with enterprise customers) via Anodot, a cost-monitoring and analytics service. The group is demanding a ransom by April [&#8230;]</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">France24</span>
+            <span class="article-time">04/12 15:57</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.france24.com/en/tv-shows/spotlight/20260412-iran-believes-they-hold-the-cards-amid-dysfunction-chaos-in-us-national-security-decision-making" target="_blank" rel="noopener">Iran believes they hold the cards amid 'dysfunction & chaos in US national security decision-making'</a>
+        </h3>
+        
+        <div class="article-description">François Picard is pleased to welcome Aaron David Miller, former State Department Middle East negotiator, and Senior Fellow at the Carnegie Endowment for International Peace. Miller has spent decades working in diplomacy, and he does not see a coherent strategy playing out here, just improvisation shaped by pressure, personality, and shifting leverage. The negotiations surrounding Iran, Israel, and Lebanon are not driven by trust or a shared vision of resolution, but by tactical necessity and as</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">SecurityWeek</span>
+            <span class="article-time">04/12 07:45</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.securityweek.com/adobe-patches-reader-zero-day-exploited-for-months/" target="_blank" rel="noopener">Adobe Patches Reader Zero-Day Exploited for Months</a>
+        </h3>
+        
+        <div class="article-description">The vulnerability is tracked as CVE-2026-34621 and Adobe has confirmed that it can be exploited for arbitrary code execution. The post Adobe Patches Reader Zero-Day Exploited for Months appeared first on SecurityWeek .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">DW World</span>
+            <span class="article-time">04/12 05:56</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.dw.com/en/ireland-clears-refinery-blockade-as-fuel-protests-trigger-nationwide-shortages/a-76751180?maca=en-rss-en-world-4025-rdf" target="_blank" rel="noopener">Ireland clears refinery blockade as fuel protests trigger nationwide shortages</a>
+        </h3>
+        
+        <div class="article-description">Authorities used force to reopen the country's only refinery, after days of disruption over petrol prices left fuel pumps dry and threatened emergency services operations.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">The Hacker News</span>
+            <span class="article-time">04/12 04:25</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://thehackernews.com/2026/04/adobe-patches-actively-exploited.html" target="_blank" rel="noopener">Adobe Patches Actively Exploited Acrobat Reader Flaw CVE-2026-34621</a>
+        </h3>
+        
+        <div class="article-description">Adobe has released emergency updates to fix a critical security flaw in Acrobat Reader that&nbsp;has come under active exploitation in the&nbsp;wild. The vulnerability, assigned the CVE identifier CVE-2026-34621, carries a CVSS score of 8.6 out of 10.0. Successful exploitation of the flaw could allow an attacker to run malicious code on affected installations. It&nbsp;has been&nbsp;described as</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Dark Reading</span>
+            <span class="article-time">04/10 20:02</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.darkreading.com/cyberattacks-data-breaches/hims-breach-exposes-sensitive-phi" target="_blank" rel="noopener">Hims Breach Exposes the Most Sensitive Kinds of PHI</a>
+        </h3>
+        
+        <div class="article-description">Threat actors breached the telehealth brand, and now they may know who's bald, overweight, and impotent. What could they do with that information?</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Dark Reading</span>
+            <span class="article-time">04/10 19:21</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.darkreading.com/identity-access-management-security/your-next-breach-business-as-usual" target="_blank" rel="noopener">Your Next Breach Will Look Like Business as Usual</a>
+        </h3>
+        
+        <div class="article-description">These are the fundamental detection model shifts cybersecurity teams need to make to keep up with the rising number of credential-based attacks.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Wired AI</span>
+            <span class="article-time">04/10 18:08</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.wired.com/story/anthropics-mythos-will-force-a-cybersecurity-reckoning-just-not-the-one-you-think/" target="_blank" rel="noopener">Anthropic’s Mythos Will Force a Cybersecurity Reckoning—Just Not the One You Think</a>
+        </h3>
+        
+        <div class="article-description">The new AI model is being heralded—and feared—as a hacker’s superweapon. Experts say its arrival is a wake-up call for developers who have long made security an afterthought.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Dark Reading</span>
+            <span class="article-time">04/10 15:52</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.darkreading.com/threat-intelligence/finra-launches-financial-intelligence-fusion-center" target="_blank" rel="noopener">FINRA Launches Financial Intelligence Fusion Center to Combat Cybersecurity and Fraud Threats</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">SecurityWeek</span>
+            <span class="article-time">04/10 14:44</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.securityweek.com/in-other-news-cyberattack-stings-stryker-windows-zero-day-china-supercomputer-hack/" target="_blank" rel="noopener">In Other News: Cyberattack Stings Stryker, Windows Zero-Day, China Supercomputer Hack</a>
+        </h3>
+        
+        <div class="article-description">Other noteworthy stories that might have slipped under the radar: Jones Day hacked, Internet Bug Bounty program paused due to AI, new Mac stealer malware. The post In Other News: Cyberattack Stings Stryker, Windows Zero-Day, China Supercomputer Hack appeared first on SecurityWeek .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">SecurityWeek</span>
+            <span class="article-time">04/10 13:44</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.securityweek.com/juniper-networks-patches-dozens-of-junos-os-vulnerabilities/" target="_blank" rel="noopener">Juniper Networks Patches Dozens of Junos OS Vulnerabilities</a>
+        </h3>
+        
+        <div class="article-description">A critical-severity flaw could be exploited remotely, without authentication, to take over a vulnerable device. The post Juniper Networks Patches Dozens of Junos OS Vulnerabilities appeared first on SecurityWeek .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">The Hacker News</span>
+            <span class="article-time">04/10 13:23</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://thehackernews.com/2026/04/glassworm-campaign-uses-zig-dropper-to.html" target="_blank" rel="noopener">GlassWorm Campaign Uses Zig Dropper to Infect Multiple Developer IDEs</a>
+        </h3>
+        
+        <div class="article-description">Cybersecurity researchers have flagged yet another evolution of the&nbsp;ongoing GlassWorm campaign, which employs a new Zig dropper that's designed to stealthily infect all integrated development environments (IDEs) on a developer's&nbsp;machine. The technique has been discovered in an Open VSX extension named&nbsp;"specstudio.code-wakatime-activity-tracker," which masquerades as WakaTime, a</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">SecurityWeek</span>
+            <span class="article-time">04/10 11:53</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.securityweek.com/orthanc-dicom-vulnerabilities-lead-to-crashes-rce/" target="_blank" rel="noopener">Orthanc DICOM Vulnerabilities Lead to Crashes, RCE</a>
+        </h3>
+        
+        <div class="article-description">Attackers could exploit these vulnerabilities in denial-of-service, information disclosure, and arbitrary code execution attacks. The post Orthanc DICOM Vulnerabilities Lead to Crashes, RCE appeared first on SecurityWeek .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Ars Technica</span>
+            <span class="article-time">04/10 11:30</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arstechnica.com/tech-policy/2026/04/dad-stuck-in-support-nightmare-after-teen-lied-about-age-on-discord/" target="_blank" rel="noopener">Dad stuck in support nightmare after teen lied about age on Discord</a>
+        </h3>
+        
+        <div class="article-description">Data dump confirms dad's suspicions that Discord knew teen's age prior to hack.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">The Hacker News</span>
+            <span class="article-time">04/10 11:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://thehackernews.com/2026/04/browser-extensions-are-new-ai.html" target="_blank" rel="noopener">Browser Extensions Are the New AI Consumption Channel That No One Is Talking About</a>
+        </h3>
+        
+        <div class="article-description">While&nbsp;much of the discussion on AI security centers around protecting&nbsp;‘shadow’ AI and GenAI consumption, there's a wide-open&nbsp;window nobody's guarding: AI browser extensions.&nbsp; A&nbsp;new report from LayerX&nbsp;exposes just how deep this blind spot goes, and why AI extensions may be the most dangerous AI threat surface in your network&nbsp;that isn't&nbsp;on anyone's&nbsp;</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">SecurityWeek</span>
+            <span class="article-time">04/10 10:44</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.securityweek.com/chrome-147-patches-60-vulnerabilities-including-two-critical-flaws-worth-86000/" target="_blank" rel="noopener">Chrome 147 Patches 60 Vulnerabilities, Including Two Critical Flaws Worth $86,000</a>
+        </h3>
+        
+        <div class="article-description">The critical vulnerabilities affect Chrome’s WebML component and they have been reported by anonymous researchers. The post Chrome 147 Patches 60 Vulnerabilities, Including Two Critical Flaws Worth $86,000 appeared first on SecurityWeek .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">SecurityWeek</span>
+            <span class="article-time">04/10 09:12</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.securityweek.com/critical-marimo-flaw-exploited-hours-after-public-disclosure/" target="_blank" rel="noopener">Critical Marimo Flaw Exploited Hours After Public Disclosure</a>
+        </h3>
+        
+        <div class="article-description">Within nine hours, a hacker built an exploit from the unauthenticated bug’s advisory and started using it in the wild. The post Critical Marimo Flaw Exploited Hours After Public Disclosure appeared first on SecurityWeek .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">The Hacker News</span>
+            <span class="article-time">04/10 07:58</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://thehackernews.com/2026/04/google-rolls-out-dbsc-in-chrome-146-to.html" target="_blank" rel="noopener">Google Rolls Out DBSC in Chrome 146 to Block Session Theft on Windows</a>
+        </h3>
+        
+        <div class="article-description">Google has&nbsp;made Device Bound Session Credentials&nbsp;(DBSC) generally available to all Windows users of its Chrome web browser, months after&nbsp;it began&nbsp;testing the security feature in open&nbsp;beta. The public availability is currently limited to Windows users on Chrome 146, with macOS expansion planned in an upcoming Chrome&nbsp;release. "This project represents a significant</div>
+        
+    </article>
+    
+            </div>
+        </section>
+        
+        <section class="category-section">
+            <div class="category-header" style="border-color: #60a5fa;">
+                <span class="category-icon">💻</span>
+                <h2 class="category-title">科技</h2>
+                <span class="category-count" style="background: #60a5fa;">144 篇</span>
+            </div>
+            <div class="articles-grid">
+                
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/13 07:42</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/a9b635f0-6fff-41e5-8e27-245de4500863" target="_blank" rel="noopener">Hungary’s Orbán concedes defeat as opposition secures landslide win</a>
+        </h3>
+        
+        <div class="article-description">Tisza party led by Péter Magyar projected to win two-thirds majority in crushing loss for EU’s longest-serving prime minister</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/13 07:36</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/news/2026/4/13/pope-leo-heads-to-algeria-as-he-starts-four-country-africa-tour?traffic_source=rss" target="_blank" rel="noopener">Pope Leo heads to Algeria as he starts four-country Africa tour</a>
+        </h3>
+        
+        <div class="article-description">The pope will also visit Cameroon, Angola and Equatorial Guinea during his 11-day trip to the continent.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/13 07:24</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/news/2026/4/13/who-is-israels-us-envoy-leading-negotiations-with-lebanon?traffic_source=rss" target="_blank" rel="noopener">Who is Israel’s US envoy leading talks with Lebanon?</a>
+        </h3>
+        
+        <div class="article-description">Israel&#039;s envoy to the US has far-right ties and has engaged in contentious rhetoric during Lebanese peace negotiations.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">TechCrunch AI</span>
+            <span class="article-time">04/13 07:01</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://techcrunch.com/2026/04/13/the-largest-orbital-compute-cluster-is-open-for-business/" target="_blank" rel="noopener">The largest orbital compute cluster is open for business</a>
+        </h3>
+        
+        <div class="article-description">Kepler Communications is flying 40 GPUs in Earth orbit. And its latest customer is Sophia Space.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">France24</span>
+            <span class="article-time">04/13 05:51</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.france24.com/en/video/20260413-fidesz-mep-l%C3%A1szl%C3%B3-attributes-loss-to-low-turnout-of-undecided-voters-and-eu-economic-stagnation" target="_blank" rel="noopener">Fidesz MEP László attributes loss to low turnout of 'undecided voters' and EU 'economic stagnation'</a>
+        </h3>
+        
+        <div class="article-description">The elections in Hungary had one of the highest turnouts since the fall of the Soviet Union. Following Péter Magyar's landslide victory, FRANCE 24's Senior European Editor Armen Georgian is pleased to welcome András László, MEP for Patriots for Europe / Fidesz. According to Laszio, the outcome cannot be reduced to a single campaign misstep or policy failure. He says governing parties across Europe are all under pressure from economic stagnation. But he does accuse the opposition of a "filthy and</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/13 04:41</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/video/newsfeed/2026/4/13/viktor-orban-swept-from-power-after-16-years-ruling-hungary?traffic_source=rss" target="_blank" rel="noopener">Viktor Orban swept from power after 16 years ruling Hungary</a>
+        </h3>
+        
+        <div class="article-description">In a record turnout at the polls, Hungarians have voted out their long-serving, far-right Prime Minister Viktor Orban.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/4ff2b813-e347-4373-8355-d19a49af5391" target="_blank" rel="noopener">What happens in Sudan will not stay in Sudan</a>
+        </h3>
+        
+        <div class="article-description">The disintegration of the country would complete an arc of ungovernable lands across the Sahel</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/02107c23-6c7a-4c19-b8e2-b45f4bb9ce5f" target="_blank" rel="noopener">Meta builds AI version of Mark Zuckerberg to interact with staff</a>
+        </h3>
+        
+        <div class="article-description">Chief executive is training and testing his own character as part of wider push to develop ‘personal superintelligence’</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/83b4d584-686b-4228-a59e-79f15c7510b7" target="_blank" rel="noopener">Carson Block sees new dawn for short sellers in AI disruption</a>
+        </h3>
+        
+        <div class="article-description">Muddy Waters founder says bets against US stocks will have ‘wind at their backs’ as technology upends markets</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08707" target="_blank" rel="noopener">Parameterized Complexity Of Representing Models Of MSO Formulas</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08707v1 Announce Type: new Abstract: Monadic second order logic (MSO2) plays an important role in parameterized complexity due to the Courcelle's theorem. This theorem states that the problem of checking if a given graph has a property specified by a given MSO2 formula can be solved by a parameterized linear time algorithm with respect to the treewidth of the graph and the size of the formula. We extend this result by showing that models of MSO2 formula with free variables can be repr</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.08863" target="_blank" rel="noopener">Hidden in Plain Sight: Visual-to-Symbolic Analytical Solution Inference from Field Visualizations</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.08863v1 Announce Type: new Abstract: Recovering analytical solutions of physical fields from visual observations is a fundamental yet underexplored capability for AI-assisted scientific reasoning. We study visual-to-symbolic analytical solution inference (ViSA) for two-dimensional linear steady-state fields: given field visualizations (and first-order derivatives) plus minimal auxiliary metadata, the model must output a single executable SymPy expression with fully instantiated numeri</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09195" target="_blank" rel="noopener">Camera Artist: A Multi-Agent Framework for Cinematic Language Storytelling Video Generation</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09195v1 Announce Type: new Abstract: We propose Camera Artist, a multi-agent framework that models a real-world filmmaking workflow to generate narrative videos with explicit cinematic language. While recent multi-agent systems have made substantial progress in automating filmmaking workflows from scripts to videos, they often lack explicit mechanisms to structure narrative progression across adjacent shots and deliberate use of cinematic language, resulting in fragmented storytelling</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09251" target="_blank" rel="noopener">DRBENCHER: Can Your Agent Identify the Entity, Retrieve Its Properties and Do the Math?</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09251v1 Announce Type: new Abstract: Deep research agents increasingly interleave web browsing with multi-step computation, yet existing benchmarks evaluate these capabilities in isolation, creating a blind spot in assessing real-world performance. We introduce DRBENCHER, a synthetic benchmark generator for questions that require both browsing and computation. It enforces four criteria: verifiability (gold answers are computed by executing parameterized code over knowledge-graph value</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09338" target="_blank" rel="noopener">Mind the Gap Between Spatial Reasoning and Acting! Step-by-Step Evaluation of Agents With Spatial-Gym</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09338v1 Announce Type: new Abstract: Spatial reasoning is central to navigation and robotics, yet measuring model capabilities on these tasks remains difficult. Existing benchmarks evaluate models in a one-shot setting, requiring full solution generation in a single response, unlike humans, who work in interactive environments step-by-step. We introduce Spatial-Gym, a Gymnasium environment that isolates spatial constraint reasoning by testing pathfinding in 2D-grid puzzles as a sequen</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09417" target="_blank" rel="noopener">Do We Really Need to Approach the Entire Pareto Front in Many-Objective Bayesian Optimisation?</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09417v1 Announce Type: new Abstract: Many-objective optimisation, a subset of multi-objective optimisation, involves optimisation problems with more than three objectives. As the number of objectives increases, the number of solutions needed to adequately represent the entire Pareto front typically grows substantially. This makes it challenging, if not infeasible, to design a search algorithm capable of effectively exploring the entire Pareto front. This difficulty is particularly acu</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">BBC World</span>
+            <span class="article-time">04/13 01:58</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.bbc.com/news/articles/cy81lg4yzeyo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Viktor Orbán's Hungarian experiment runs out of steam</a>
+        </h3>
+        
+        <div class="article-description">Péter Magyar's historic win offers peace for a country exhausted by the tensions of Viktor Orbán's rule, Nick Thorpe reports from Budapest.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">France24</span>
+            <span class="article-time">04/13 01:45</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.france24.com/en/culture/20260413-lost-film-by-french-cinema-pioneer-georges-m%C3%A9li%C3%A8s-retrieved-from-us-attic" target="_blank" rel="noopener">Lost film by French cinema pioneer Georges Méliès retrieved from US attic</a>
+        </h3>
+        
+        <div class="article-description">"Gugusse and the Automaton", a short silent film made by French cinema pioneer Georges Méliès back in 1897, was lost to history until it was found in a trove of film reels donated to the US Library of Congress. The precious celluloid belonged to a potato farmer who showed silent movies to audiences in rural Pennsylvania at the turn of the 20th century.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">BBC World</span>
+            <span class="article-time">04/12 23:20</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.bbc.com/news/articles/cm2k8v027k0o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">The Dutch village at risk of being demolished</a>
+        </h3>
+        
+        <div class="article-description">Moerdijk has been earmarked for removal, to make way for a vast electricity substation.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/12 23:12</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/b348e8f5-c70a-4176-920e-168354846cc5" target="_blank" rel="noopener">Hungary opposition delivers ‘regime change’</a>
+        </h3>
+        
+        <div class="article-description">With its huge mandate Péter Magyar’s Tisza can prepare to change the constitution and restore rule of law</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/12 23:01</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/184f97b0-275b-4d28-9ed6-bdb15ae0c69f" target="_blank" rel="noopener">UK Treasury to profit from final year of student loan scheme, says analysis</a>
+        </h3>
+        
+        <div class="article-description">Labour draws graduate anger amid calls for reform after repeated changes to repayment terms</div>
+        
+    </article>
+    
+            </div>
+        </section>
+        
+        <section class="category-section">
+            <div class="category-header" style="border-color: #34d399;">
+                <span class="category-icon">📈</span>
+                <h2 class="category-title">經濟</h2>
+                <span class="category-count" style="background: #34d399;">8 篇</span>
+            </div>
+            <div class="articles-grid">
+                
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/13 01:30</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/economy/2026/4/13/oil-prices-surge-past-103-a-barrel-after-us-announces-blockade-of-iran?traffic_source=rss" target="_blank" rel="noopener">Oil prices surge past $103 a barrel after US announces blockade of Iran</a>
+        </h3>
+        
+        <div class="article-description">Asian stocks fall as naval blockade threat injects new turmoil into financial markets.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/12 20:49</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/gallery/2026/4/12/nigerian-artisans-preserve-handwoven-fabric-amid-rising-global-demand?traffic_source=rss" target="_blank" rel="noopener">Nigerian artisans preserve handwoven fabric amid rising global demand</a>
+        </h3>
+        
+        <div class="article-description">Resisting mechanisation, Nigerian artisans uphold the authenticity of aso-oke, now a staple in global fashion markets.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">BBC World</span>
+            <span class="article-time">04/12 18:11</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.bbc.com/news/articles/cgk021z3ejpo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Civilians feared killed after reports of air strike on Nigerian market</a>
+        </h3>
+        
+        <div class="article-description">The Nigerian Air Force has not addressed reports it struck a village market while targeting militants.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">BBC World</span>
+            <span class="article-time">04/12 00:30</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.bbc.com/news/articles/cx237vmr2lyo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Why this disillusioned Trump voter spends hours searching Epstein files</a>
+        </h3>
+        
+        <div class="article-description">Many who support the president have expressed frustration with how Trump's former attorney general Pam Bondi handled the Epstein files.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Wired AI</span>
+            <span class="article-time">04/11 10:30</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.wired.com/story/security-news-this-week-your-push-notifications-arent-safe-from-the-fbi/" target="_blank" rel="noopener">Your Push Notifications Aren’t Safe From the FBI</a>
+        </h3>
+        
+        <div class="article-description">Plus: Iran’s internet blackout hits the 1,000-hour mark, cryptocurrency scams result in a record amount of money stolen from Americans, and more.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">TechCrunch</span>
+            <span class="article-time">04/10 19:16</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://techcrunch.com/2026/04/10/battery-recycler-ascend-elements-files-for-bankruptcy/" target="_blank" rel="noopener">Battery recycler Ascend Elements files for bankruptcy</a>
+        </h3>
+        
+        <div class="article-description">Ascend Elements said that it will be filing for Chapter 11 bankruptcy in the wake of a canceled government grant and a challenging market for lithium-ion batteries.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Engadget</span>
+            <span class="article-time">04/10 16:17</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.engadget.com/big-tech/google-has-reportedly-started-to-add-polymarket-data-to-news-results-161708462.html?src=rss" target="_blank" rel="noopener">Google has reportedly started to add Polymarket data to News results</a>
+        </h3>
+        
+        <div class="article-description">Google News has begun showing Polymarket bets and odds alongside actual stories, according to a report by Futurism . These look to appear as large blocks that include links to numerous ways for people to lose their money. Bets tend to appear in the "For you" section of Google News, which is supposed to be tailored to a person's particular interests. Futurism notes that the platform actually placed a Polymarket bet as the top news result when inquiring about the price of Bitcoin. The publication </div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Wired</span>
+            <span class="article-time">04/10 10:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.wired.com/story/no-one-knows-where-us-vaccine-policy-goes-next/" target="_blank" rel="noopener">No One Knows Where US Vaccine Policy Goes Next</a>
+        </h3>
+        
+        <div class="article-description">Robert F. Kennedy Jr.’s sweeping changes to federal vaccine guidance are paused for now. But even if they’re reversed, lasting damage has already been done.</div>
+        
+    </article>
+    
+            </div>
+        </section>
+        
+        <section class="category-section">
+            <div class="category-header" style="border-color: #fbbf24;">
+                <span class="category-icon">🌍</span>
+                <h2 class="category-title">國際</h2>
+                <span class="category-count" style="background: #fbbf24;">74 篇</span>
+            </div>
+            <div class="articles-grid">
+                
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">BBC World</span>
+            <span class="article-time">04/13 07:40</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.bbc.com/news/articles/cp841y07w5xo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Trump attacks Pope over criticism of Iran war</a>
+        </h3>
+        
+        <div class="article-description">The US president accuses Leo of being "weak on crime and terrible for foreign policy".</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/13 07:39</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/video/newsfeed/2026/4/13/celebrations-in-hungary-after-orban-ousted-in-landmark-election?traffic_source=rss" target="_blank" rel="noopener">Celebrations in Hungary after Orban ousted in landmark election</a>
+        </h3>
+        
+        <div class="article-description">Celebrations broke out across Budapest after opposition leader Peter Magyar defeated Prime Minister Viktor Orban.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/13 07:30</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/news/2026/4/13/iran-war-what-is-happening-on-day-45-of-the-us-iran-conflict?traffic_source=rss" target="_blank" rel="noopener">Iran war: What is happening on day 45 of the US-Iran conflict?</a>
+        </h3>
+        
+        <div class="article-description">The move to blockade the Strait of Hormuz is the latest escalation in the war after failure to sign peace deal.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">DW World</span>
+            <span class="article-time">04/13 07:14</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.dw.com/en/why-africa-remains-divided-over-macky-sall-s-un-bid/a-76739197?maca=en-rss-en-world-4025-rdf" target="_blank" rel="noopener">Why Africa remains divided over Macky Sall's UN bid</a>
+        </h3>
+        
+        <div class="article-description">Burundi nominated former Senegal president Macky Sall for UN chief, but Africa's backing fractured. AU procedural disputes, objections and regional politics scuppered a united endorsement.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">France24</span>
+            <span class="article-time">04/13 07:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.france24.com/en/europe/20260413-hungary-peter-magyar-former-fidesz-insider-vows-to-dismantle-orban-system-brick-by-brick" target="_blank" rel="noopener">Peter Magyar: former Fidesz insider who vowed to dismantle Orban system 'brick by brick'</a>
+        </h3>
+        
+        <div class="article-description">A former Orban loyalist, Peter Magyar carried his Tisza party to a crushing win in Sunday's high-stakes elections, ending 16 years of Fidesz rule. The 45-year-old has pledged to crack down on corruption and rebuild Hungary's damaged relationships with the European Union and NATO.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">BBC World</span>
+            <span class="article-time">04/13 06:25</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.bbc.com/news/articles/cd9vg782kx7o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Orbán era swept away by Péter Magyar's Hungary election landslide</a>
+        </h3>
+        
+        <div class="article-description">Viktor Orbán's 16-year rule is over, defeated by a 45-year-old ex-party insider who convinced a majority of Hungarians to oust him.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/13 06:15</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/4dbf076f-004b-4244-8579-2aca3e60e05c" target="_blank" rel="noopener">Oil prices soar above $100 a barrel as hope fades of end to Iran war</a>
+        </h3>
+        
+        <div class="article-description">Crude had stabilised on optimism that a deal could be reached to reopen the Strait of Hormuz</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">DW World</span>
+            <span class="article-time">04/13 06:01</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.dw.com/en/hungary-orban-s-ouster-heralds-thaw-in-eu-ties/a-76758641?maca=en-rss-en-world-4025-rdf" target="_blank" rel="noopener">Hungary: Orban's ouster heralds thaw in EU ties</a>
+        </h3>
+        
+        <div class="article-description">Hungarian voters have chosen the pro-EU course of Peter Magyar, ending 16 years of rule by Russia-friendly Viktor Orban. Europe is now waiting to see if he can make good on his promises to repair ties with Brussels.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/13 05:42</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/news/2026/4/13/terrible-for-foreign-policy-trump-attacks-pope-leo-after-peace-appeal?traffic_source=rss" target="_blank" rel="noopener">‘Terrible for foreign policy’: Trump attacks Pope Leo after peace appeal</a>
+        </h3>
+        
+        <div class="article-description">Leo, ​who last year became the first US-born pope, has emerged as an outspoken critic of the US-Israeli ⁠war on Iran.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">France24</span>
+            <span class="article-time">04/13 04:09</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.france24.com/en/middle-east/20260413-iran-executed-at-least-1-639-people-in-2025-highest-number-since-1989" target="_blank" rel="noopener">Iran executed 'at least 1,639 people' in 2025, highest number since 1989</a>
+        </h3>
+        
+        <div class="article-description">Iran executed at least 1,639 people last year, an average of more than four executions per day, Norway-based Iran Human Rights and Paris-based Together Against the Death Penalty said in their joint annual report, warning that the regime risked killing even more people this year after protests in January and amid the war triggered by the US and Israel.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09035" target="_blank" rel="noopener">Advantage-Guided Diffusion for Model-Based Reinforcement Learning</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09035v1 Announce Type: new Abstract: Model-based reinforcement learning (MBRL) with autoregressive world models suffers from compounding errors, whereas diffusion world models mitigate this by generating trajectory segments jointly. However, existing diffusion guides are either policy-only, discarding value information, or reward-based, which becomes myopic when the diffusion horizon is short. We introduce Advantage-Guided Diffusion for MBRL (AGD-MBRL), which steers the reverse diffus</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09308" target="_blank" rel="noopener">Constraint-Aware Corrective Memory for Language-Based Drug Discovery Agents</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09308v1 Announce Type: new Abstract: Large language models are making autonomous drug discovery agents increasingly feasible, but reliable success in this setting is not determined by any single action or molecule. It is determined by whether the final returned set jointly satisfies protocol-level requirements such as set size, diversity, binding quality, and developability. This creates a fundamental control problem: the agent plans step by step, while task validity is decided at the</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09408" target="_blank" rel="noopener">HiL-Bench (Human-in-Loop Benchmark): Do Agents Know When to Ask for Help?</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09408v1 Announce Type: new Abstract: Frontier coding agents solve complex tasks when given complete context but collapse when specifications are incomplete or ambiguous. The bottleneck is not raw capability, but judgment: knowing when to act autonomously and when to ask for help. Current benchmarks are blind to this failure mode. They supply unambiguous detailed instructions and solely reward execution correctness, so an agent that makes a lucky guess for a missing requirement will sc</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">ArXiv CS.AI</span>
+            <span class="article-time">04/13 04:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arxiv.org/abs/2604.09482" target="_blank" rel="noopener">Process Reward Agents for Steering Knowledge-Intensive Reasoning</a>
+        </h3>
+        
+        <div class="article-description">arXiv:2604.09482v1 Announce Type: new Abstract: Reasoning in knowledge-intensive domains remains challenging as intermediate steps are often not locally verifiable: unlike math or code, evaluating step correctness may require synthesizing clues across large external knowledge sources. As a result, subtle errors can propagate through reasoning traces, potentially never to be detected. Prior work has proposed process reward models (PRMs), including retrieval-augmented variants, but these methods o</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/13 03:15</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/5cfc03ff-6966-46fd-a62f-01b2452402dc" target="_blank" rel="noopener">Donald Trump lashes Pope Leo on social media for criticism of Iran war</a>
+        </h3>
+        
+        <div class="article-description">The head of the Catholic Church has emerged as a leading voice of opposition against US foreign policy</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">France24</span>
+            <span class="article-time">04/13 02:38</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.france24.com/en/americas/20260413-peru-presidential-election-delayed-as-voting-chaos-forces-extension" target="_blank" rel="noopener">Peru's presidential election delayed as voting chaos forces extension</a>
+        </h3>
+        
+        <div class="article-description">Peru’s presidential election has been delayed after logistical problems disrupted voting across the country, forcing electoral authorities to extend the process into Monday. With 35 candidates in a crowded field and widespread frustration over crime and corruption, voters are now waiting for results in a highly uncertain and tightly contested race.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/13 02:29</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/sports/2026/4/13/rory-mcilroy-wins-masters-to-become-fourth-back-to-back-champion?traffic_source=rss" target="_blank" rel="noopener">Rory McIlroy wins Masters to become fourth back-to-back champion</a>
+        </h3>
+        
+        <div class="article-description">The Northern Irishman becomes the first player to repeat at Augusta National since Tiger Woods back in 2001-2002.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">France24</span>
+            <span class="article-time">04/13 02:11</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.france24.com/en/middle-east/20260413-middle-east-war-live-trump-announces-blockade-of-strait-of-hormuz-on-monday" target="_blank" rel="noopener">Middle East war live: Iran says US naval blockade of Hormuz 'illegal' and 'piracy'</a>
+        </h3>
+        
+        <div class="article-description">Iran's military said a US naval blockade of the Strait of Hormuz set to begin on Monday would be illegal and amount to piracy, warning that no Gulf ports would be safe if its own are threatened. US President Donald Trump earlier told reporters he didn't "care" whether Tehran returns to negotiations with the US after weekend talks in Pakistan ended without a deal. Follow our liveblog for the latest updates.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">BBC World</span>
+            <span class="article-time">04/13 01:35</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.bbc.com/news/articles/c1w4539z0y9o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Eight to be awarded for bravery in Bondi Junction stabbing</a>
+        </h3>
+        
+        <div class="article-description">Six people were killed and ten injured after a man went on a stabbing rampage in an Australian mall.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">BBC World</span>
+            <span class="article-time">04/13 00:52</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.bbc.com/news/videos/c2lwrjwg29lo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">'A truly historic moment': Hungarian opposition wins election landslide</a>
+        </h3>
+        
+        <div class="article-description">Rajini Vaidyanathan broadcasts from outside Hungary's parliament as crowds hear about the prime minister's concession.</div>
+        
+    </article>
+    
+            </div>
+        </section>
+        
+    </main>
+    
+    <footer class="footer">
+        <p>NewsRadar 新聞雷達 | 自動更新</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="." class="refresh-btn">🔄 重新整理</a>
+        </p>
+    </footer>
+</body>
+</html>
