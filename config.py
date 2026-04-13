@@ -61,6 +61,8 @@ FEEDS = {
         {"name": "CoinDesk", "url": "https://www.coindesk.com/arc/outboundfeeds/rss/", "lang": "en"},
         {"name": "CoinTelegraph", "url": "https://cointelegraph.com/rss", "lang": "en"},
         {"name": "FX Street", "url": "https://www.fxstreet.com/rss/news.aspx", "lang": "en"},
+        {"name": "Investing.com", "url": "https://www.investing.com/rss/news.rss", "lang": "en"},
+        {"name": "MarketWatch", "url": "http://feeds.marketwatch.com/marketwatch/topstories/", "lang": "en"},
     ],
 }
 
