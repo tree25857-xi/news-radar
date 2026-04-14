@@ -42,7 +42,7 @@ class Translator:
             return text  # Return original if no translator
         
         try:
-            result = self.client.translate(text, src=src_lang, dest='zh-cn')
+            result = self.client.translate(text, src=src_lang, dest='zh-tw')
             translated = result.text
             self.cache[cache_key] = translated
             return translated
