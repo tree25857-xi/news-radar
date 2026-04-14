@@ -1,6 +1,8 @@
+#!/usr/bin/env python3
 """
 NewsRadar - Google Translate Integration
-Translates non-Chinese titles to Chinese for display
+Translates non-Chinese titles to Traditional Chinese for display
+Uses Google Translate + OpenCC for S2T conversion
 """
 
 import logging
@@ -17,6 +19,14 @@ except ImportError:
     TRANSLATOR_AVAILABLE = False
     logger.warning("googletrans not installed. Run: pip install googletrans==4.0.0-rc1")
 
+# Check if OpenCC is available for S2T conversion
+try:
+    from opencc import OpenCC
+    opencc_s2t = OpenCC('s2t')  # Simplified to Traditional
+    OPENCC_AVAILABLE = True
+except ImportError:
+    OPENCC_AVAILABLE = False
+    logger.warning("opencc-python-reinstalled not installed. Run: pip install opencc-python-reimplemented")
 
 class Translator:
     def __init__(self):
@@ -25,7 +35,7 @@ class Translator:
         self.cache: Dict[str, str] = {}
     
     def translate_to_chinese(self, text: str, src_lang: str = 'en') -> str:
-        """Translate text to Chinese"""
+        """Translate text to Traditional Chinese"""
         if not text:
             return ''
         
@@ -42,25 +52,18 @@ class Translator:
             return text  # Return original if no translator
         
         try:
-            result = self.client.translate(text, src=src_lang, dest='zh-tw')
+            result = self.client.translate(text, src=src_lang, dest='zh-cn')
             translated = result.text
+            
+            # Convert Simplified Chinese to Traditional Chinese
+            if OPENCC_AVAILABLE:
+                translated = opencc_s2t.convert(translated)
+            
             self.cache[cache_key] = translated
             return translated
         except Exception as e:
             logger.warning(f"翻譯失敗: {e}")
             return text
-    
-    def translate_batch(self, articles: List[Dict]) -> List[Dict]:
-        """Translate all articles in batch"""
-        for article in articles:
-            if article["source_lang"] != "zh":
-                translated = self.translate_to_chinese(article["title"], article["source_lang"])
-                article["translated_title"] = translated
-            else:
-                article["translated_title"] = article["title"]
-            time.sleep(0.2)  # Rate limiting
-        
-        return articles
     
     def _is_chinese(self, text: str) -> bool:
         """Check if text contains Chinese characters"""
@@ -70,17 +73,25 @@ class Translator:
         return False
 
 
-def translate_articles(articles: List[Dict]) -> List[Dict]:
-    """Main entry point for translating articles"""
+def translate_articles(articles: List[Dict], delay: float = 0.5) -> List[Dict]:
+    """Translate all article titles to Traditional Chinese"""
     translator = Translator()
-    return translator.translate_batch(articles)
-
-
-if __name__ == "__main__":
-    test_articles = [
-        {"title": "OpenAI announces GPT-5", "source_lang": "en", "translated_title": None},
-        {"title": "This is in Chinese already", "source_lang": "zh", "translated_title": None},
-    ]
-    result = translate_articles(test_articles)
-    for a in result:
-        print(f"{a['title']} -> {a['translated_title']}")
+    translated_count = 0
+    
+    for article in articles:
+        title = article.get('title', '')
+        lang = article.get('lang', 'en')
+        
+        if lang == 'en' and title:
+            translated_title = translator.translate_to_chinese(title, 'en')
+            article['title'] = translated_title
+            translated_count += 1
+            time.sleep(delay)  # Respect rate limits
+        
+        # Also translate summary if exists
+        summary = article.get('summary', '')
+        if lang == 'en' and summary:
+            article['summary'] = translator.translate_to_chinese(summary, 'en')
+    
+    logger.info(f"翻譯完成：{translated_count} 篇文章")
+    return articles
