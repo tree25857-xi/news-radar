@@ -1,6 +1,6 @@
 """
 RSS Feed Sources Configuration
-38 sources across 5 domains
+8 categories with forex and commodities added
 """
 
 FEEDS = {
@@ -64,7 +64,24 @@ FEEDS = {
         {"name": "Investing.com", "url": "https://www.investing.com/rss/news.rss", "lang": "en"},
         {"name": "MarketWatch", "url": "http://feeds.marketwatch.com/marketwatch/topstories/", "lang": "en"},
     ],
+    "外匯市場": [
+        {"name": "FX Street Forex", "url": "https://www.fxstreet.com/rss/news.aspx", "lang": "en"},
+        {"name": "Investing.com Forex", "url": "https://www.investing.com/rss/forex.rss", "lang": "en"},
+        {"name": "DailyFX", "url": "https://www.dailyfx.com/feeds/jforex", "lang": "en"},
+        {"name": "Forex Crunch", "url": "https://www.forexcrunch.com/feed/", "lang": "en"},
+        {"name": "BabyPips", "url": "https://www.babypips.com/feed", "lang": "en"},
+    ],
+    "商品期貨": [
+        {"name": "Investing.com Commodities", "url": "https://www.investing.com/rss/commodities.rss", "lang": "en"},
+        {"name": "Oil Price", "url": "https://oilprice.com/feed/", "lang": "en"},
+        {"name": "Kitco News", "url": "https://www.kitco.com/rss/", "lang": "en"},
+        {"name": "SGX Commodities", "url": "https://www.sgx.com/rss/feed-products-forex", "lang": "en"},
+        {"name": "CME Group", "url": "https://www.cmegroup.com/rss/marketdata/latest20.rss", "lang": "en"},
+    ],
 }
+
+# 每個分類的最大文章數量
+MAX_ARTICLES_PER_CATEGORY = 100
 
 # 關鍵詞分類系統
 CATEGORY_KEYWORDS = {
@@ -105,6 +122,19 @@ CATEGORY_KEYWORDS = {
         "forex", "currency", "bond", "fund", "etf", "Nasdaq", "Dow", "S&P",
         "股價", "交易所", "上市", "財報", "營收", "加密貨幣", "比特幣", "以太幣",
         "外匯", "USD", "EUR", "JPY", "台股", "美股", "期貨", "選擇權",
+    ],
+    "外匯市場": [
+        "forex", "fx", "currency", "usd", "eur", "jpy", "gbp", "chf", "aud", "cad", "nzд",
+        "外匯", "匯率", "美元", "歐元", "日圓", "英鎊", "瑞士法郎",
+        "trading", "pip", "spread", "leverage", "margin", "lot",
+        "外匯交易", "外幣", "換匯", "貶值", "升值", "央行干預",
+    ],
+    "商品期貨": [
+        "commodity", "futures", "oil", "gold", "silver", "copper", "natural gas",
+        "cme", "nymex", "comex", "ice", "大宗商品", "期貨", "原油", "黃金",
+        "白銀", "銅", "天然氣", "農產品", "大豆", "小麥", "玉米",
+        "商品價格", "供需", "庫存", "OPEC", "庫存報告",
+        "wti", "brent", "crude", "precious metals", "base metals",
     ],
 }
 
