@@ -6,6 +6,7 @@ Uses Google Translate + OpenCC for S2T conversion
 """
 
 import logging
+import asyncio
 from typing import List, Dict
 import time
 
@@ -34,8 +35,8 @@ class Translator:
             self.client = GoogleTranslator()
         self.cache: Dict[str, str] = {}
     
-    def translate_to_chinese(self, text: str, src_lang: str = 'en') -> str:
-        """Translate text to Traditional Chinese"""
+    async def _translate_async(self, text: str, src_lang: str = 'en') -> str:
+        """Async translate text to Traditional Chinese"""
         if not text:
             return ''
         
@@ -52,7 +53,7 @@ class Translator:
             return text  # Return original if no translator
         
         try:
-            result = self.client.translate(text, src=src_lang, dest='zh-cn')
+            result = await self.client.translate(text, src=src_lang, dest='zh-cn')
             translated = result.text
             
             # Convert Simplified Chinese to Traditional Chinese
@@ -63,6 +64,22 @@ class Translator:
             return translated
         except Exception as e:
             logger.warning(f"翻譯失敗: {e}")
+            return text
+    
+    def translate_to_chinese(self, text: str, src_lang: str = 'en') -> str:
+        """Sync wrapper for translate"""
+        try:
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                # If we're already in an async context, create a new task
+                import concurrent.futures
+                with concurrent.futures.ThreadPoolExecutor() as pool:
+                    future = pool.submit(asyncio.run, self._translate_async(text, src_lang))
+                    return future.result()
+            else:
+                return asyncio.run(self._translate_async(text, src_lang))
+        except Exception as e:
+            logger.warning(f"翻譯執行失敗: {e}")
             return text
     
     def _is_chinese(self, text: str) -> bool:
@@ -78,20 +95,39 @@ def translate_articles(articles: List[Dict], delay: float = 0.5) -> List[Dict]:
     translator = Translator()
     translated_count = 0
     
-    for article in articles:
-        title = article.get('title', '')
-        lang = article.get('lang', 'en')
+    async def translate_all():
+        nonlocal translated_count
+        tasks = []
         
-        if lang == 'en' and title:
-            translated_title = translator.translate_to_chinese(title, 'en')
-            article['title'] = translated_title
-            translated_count += 1
-            time.sleep(delay)  # Respect rate limits
+        for article in articles:
+            title = article.get('title', '')
+            lang = article.get('lang', 'en')
+            
+            if lang == 'en' and title:
+                tasks.append((article, 'title', translator._translate_async(title, 'en')))
+                translated_count += 1
+            
+            # Also translate summary if exists
+            summary = article.get('summary', '')
+            if lang == 'en' and summary:
+                tasks.append((article, 'summary', translator._translate_async(summary, 'en')))
         
-        # Also translate summary if exists
-        summary = article.get('summary', '')
-        if lang == 'en' and summary:
-            article['summary'] = translator.translate_to_chinese(summary, 'en')
+        # Execute all translations concurrently
+        if tasks:
+            results = await asyncio.gather(*[t[2] for t in tasks], return_exceptions=True)
+            
+            for i, (article, field, _) in enumerate(tasks):
+                if isinstance(results[i], Exception):
+                    logger.warning(f"翻譯錯誤: {results[i]}")
+                else:
+                    article[field] = results[i]
+        
+        await asyncio.sleep(delay)  # Respect rate limits
+    
+    try:
+        asyncio.run(translate_all())
+    except Exception as e:
+        logger.warning(f"翻譯執行失敗: {e}")
     
     logger.info(f"翻譯完成：{translated_count} 篇文章")
     return articles
