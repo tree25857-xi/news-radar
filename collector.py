@@ -50,8 +50,19 @@ class NewsCollector:
         
         # Remove duplicates
         unique_articles = self._deduplicate(self.articles)
-        logger.info(f"總計取得 {len(unique_articles)} 篇不重複文章")
-        return unique_articles
+        
+        # Limit articles per category
+        from config import MAX_ARTICLES_PER_CATEGORY
+        category_counts = {}
+        limited_articles = []
+        for article in unique_articles:
+            cat = article.get('category', '其他')
+            category_counts[cat] = category_counts.get(cat, 0) + 1
+            if category_counts[cat] <= MAX_ARTICLES_PER_CATEGORY:
+                limited_articles.append(article)
+        
+        logger.info(f"總計取得 {len(limited_articles)} 篇不重複文章（每分類上限 {MAX_ARTICLES_PER_CATEGORY}）")
+        return limited_articles
     
     def _fetch_feed(self, category: str, feed_info: Dict) -> List[Dict]:
         """Fetch a single RSS feed"""
