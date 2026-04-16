@@ -42,25 +42,30 @@ def run_update():
     except Exception as e:
         logger.warning(f"翻譯失敗: {e}")
     
-    # Step 4: AI Summary
+    # Step 4: AI Summary (可選功能)
     logger.info("🤖 步驟 4/5: AI 生成摘要...")
-    try:
-        from collections import defaultdict
-        news_by_cat = defaultdict(list)
-        for a in articles:
-            cat = a.get('predicted_category', a.get('category', '其他'))
-            news_by_cat[cat].append(a)
-        
-        ai_results = summarize_all(dict(news_by_cat))
-        
-        # 附加 AI 摘要到文章
-        for a in articles:
-            cat = a.get('predicted_category', a.get('category', '其他'))
-            if cat in ai_results:
-                a['ai_summary'] = ai_results[cat].get('summary', '')
-                a['ai_tags'] = ai_results[cat].get('tags', [])
-    except Exception as e:
-        logger.warning(f"AI 摘要失敗: {e}")
+    skip_ai = os.environ.get("SKIP_AI_SUMMARY", "true").lower() in ("1", "true", "yes")
+    
+    if skip_ai:
+        logger.info("⏭️ AI 摘要功能已停用（SKIP_AI_SUMMARY=true）")
+    else:
+        try:
+            from collections import defaultdict
+            news_by_cat = defaultdict(list)
+            for a in articles:
+                cat = a.get('predicted_category', a.get('category', '其他'))
+                news_by_cat[cat].append(a)
+            
+            ai_results = summarize_all(dict(news_by_cat))
+            
+            # 附加 AI 摘要到文章
+            for a in articles:
+                cat = a.get('predicted_category', a.get('category', '其他'))
+                if cat in ai_results:
+                    a['ai_summary'] = ai_results[cat].get('summary', '')
+                    a['ai_tags'] = ai_results[cat].get('tags', [])
+        except Exception as e:
+            logger.warning(f"AI 摘要失敗: {e}")
     
     # Step 5: Generate HTML
     logger.info("📄 步驟 5/5: 生成 HTML 頁面...")
