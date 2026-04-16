@@ -93,6 +93,22 @@
             transform: translateY(-2px);
         }
         
+        .new-badge {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: white;
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-left: 0.3rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
         .last-update {
             color: var(--text-muted);
             font-size: 0.85rem;
@@ -295,10 +311,10 @@
     <div class="stats-bar">
         <div class="stats-content">
             <div class="stats-left">
-                <span class="stat-badge" style="background: #f9fafb; color: #6b7280;">📰 商品期貨: 19</span><span class="stat-badge" style="background: #422006; color: #f59e0b;">💹 金融: 72</span><span class="stat-badge" style="background: #f9fafb; color: #6b7280;">📰 外匯市場: 14</span><span class="stat-badge" style="background: #422006; color: #fbbf24;">🌍 國際: 105</span><span class="stat-badge" style="background: #022c22; color: #34d399;">📈 經濟: 16</span><span class="stat-badge" style="background: #1e1b4b; color: #a78bfa;">🤖 AI: 132</span><span class="stat-badge" style="background: #0c1929; color: #60a5fa;">💻 科技: 76</span><span class="stat-badge" style="background: #4a0519; color: #f87171;">🔒 網路安全: 55</span>
+                <span class="stat-badge" style="background: #fef2f2; color: #dc2626;">📊 商品期貨: 10 <span class="new-badge">✨NEW</span></span><span class="stat-badge" style="background: #ecfdf5; color: #059669;">💱 外匯市場: 20 <span class="new-badge">✨NEW</span></span><span class="stat-badge" style="background: #422006; color: #fbbf24;">🌍 國際: 91</span><span class="stat-badge" style="background: #422006; color: #f59e0b;">💹 金融: 100</span><span class="stat-badge" style="background: #0c1929; color: #60a5fa;">💻 科技: 66</span><span class="stat-badge" style="background: #022c22; color: #34d399;">📈 經濟: 12</span><span class="stat-badge" style="background: #4a0519; color: #f87171;">🔒 網路安全: 90</span><span class="stat-badge" style="background: #1e1b4b; color: #a78bfa;">🤖 AI: 100</span>
             </div>
             <div class="last-update">
-                🔄 更新時間: 2026-04-16 08:45:10
+                🔄 更新時間: 2026-04-16 09:34:53
             </div>
         </div>
     </div>
@@ -309,189 +325,20 @@
             <div class="category-header" style="border-color: #a78bfa;">
                 <span class="category-icon">🤖</span>
                 <h2 class="category-title">AI</h2>
-                <span class="category-count" style="background: #a78bfa;">132 篇</span>
+                <span class="category-count" style="background: #a78bfa;">100 篇</span>
             </div>
             <div class="articles-grid">
                 
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Al Jazeera</span>
-            <span class="article-time">04/15 23:45</span>
+            <span class="article-source">VentureBeat</span>
+            <span class="article-time">04/15 20:58</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.aljazeera.com/news/2026/4/15/el-salvador-publishes-law-allowing-life-sentences-for-minors-as-young-as-12?traffic_source=rss" target="_blank" rel="noopener">El Salvador publishes law allowing life sentences for minors as young as 12</a>
+            <a href="https://venturebeat.com/security/microsoft-salesforce-copilot-agentforce-prompt-injection-cve-agent-remediation-playbook" target="_blank" rel="noopener">Microsoft patched a Copilot Studio prompt injection. The data exfiltrated anyway.</a>
         </h3>
         
-        <div class="article-description">The new sentencing measure comes as President Nayib Bukele oversees a four-year-long state of emergency against crime.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 23:09</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891073-hubspot-inc-hubs-discusses-2026-strategy-and-ai-driven-innovations-for-growth-companies?source=feed_all_articles" target="_blank" rel="noopener">HubSpot, Inc. (HUBS) Discusses 2026 Strategy and AI-Driven Innovations for Growth Companies - Slideshow</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">BBC World</span>
-            <span class="article-time">04/15 22:56</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.bbc.com/news/articles/clyddyp19yyo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Ticketmaster-owner Live Nation ran a monopoly and overcharged fans, jury finds</a>
-        </h3>
-        
-        <div class="article-description">The lawsuit said the firm's practices had led to higher ticket prices and worse service for customers.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Wired</span>
-            <span class="article-time">04/15 22:53</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.wired.com/story/the-last-airbender-leak-fans-say-paramount-deserves-fallout/" target="_blank" rel="noopener">‘Avatar: Aang, The Last Airbender’ Leaked Online. Some Fans Say Paramount Deserves the Fallout</a>
-        </h3>
-        
-        <div class="article-description">After the full movie leaked, animators mourned the chance to release their work as intended. Others feel the leak is justified in light of Paramount’s marketing blunders and association with Trump.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 22:31</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891048-helios-fairfax-partners-corporation-ffxxf-analyst-investor-day-transcript?source=feed_all_articles" target="_blank" rel="noopener">Helios Fairfax Partners Corporation (FFXXF) Analyst/Investor Day Transcript</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">France24</span>
-            <span class="article-time">04/15 22:06</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.france24.com/en/sport/20260415-bayern-munich-edge-real-madrid-champions-league-semi-finals" target="_blank" rel="noopener">Bayern Munich edge Real Madrid to reach Champions League semi-finals</a>
-        </h3>
-        
-        <div class="article-description">Late goals from Luis Diaz and Michael Olise earned Bayern Munich a dramatic 4-3 win over Real Madrid on Wednesday, sealing a 6-4 aggregate victory and a Champions League semi-final against holders Paris Saint-Germain. Real Madrid had led three times in a high-tempo first half.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">MarketWatch</span>
-            <span class="article-time">04/15 21:57</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.marketwatch.com/story/allbirds-ai-pivot-sends-its-stock-soaring-300-weve-seen-this-film-before-04665b32?mod=mw_rss_topstories" target="_blank" rel="noopener">Allbirds’ AI pivot sends its stock soaring nearly 600%. We’ve seen this movie before.</a>
-        </h3>
-        
-        <div class="article-description">It’s not unprecedented for struggling companies to latch on to the hot trend of the moment — remember the blockchain hype cycle?</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">France24</span>
-            <span class="article-time">04/15 21:55</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.france24.com/en/middle-east/20260415-jailed-iranian-nobel-laureate-narges-mohammadi-critical-condition-supporters-say" target="_blank" rel="noopener">Jailed Iranian Nobel laureate Narges Mohammadi in critical condition, supporters say</a>
-        </h3>
-        
-        <div class="article-description">The health of jailed Iranian Nobel Peace Prize laureate Narges Mohammadi is critical after she suffered a heart attack last month, supporters said on Wednesday. Her family and lawyers, allowed a second prison visit, reported a sharp deterioration in her condition, with her physical state now described as critical, her foundation said.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 21:39</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891049-dutch-bros-a-high-growth-coffee-chain-navigating-uncertain-waters?source=feed_all_articles" target="_blank" rel="noopener">Dutch Bros: A High-Growth Coffee Chain Navigating Uncertain Waters</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">TechCrunch</span>
-            <span class="article-time">04/15 21:38</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://techcrunch.com/2026/04/15/wait-could-they-still-actually-break-up-live-nation/" target="_blank" rel="noopener">Wait, could they still actually break up Live Nation?</a>
-        </h3>
-        
-        <div class="article-description">A federal jury found that Live Nation has acted illegally as a monopoly -- but the company just came to a tentative settlement with the DOJ last month.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 21:31</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891047-universal-health-services-huge-bargain-8x-earnings-vs-hca-16x?source=feed_all_articles" target="_blank" rel="noopener">Universal Health Services Is A Huge Bargain At 8x Earnings Vs HCA At 16x</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">France24</span>
-            <span class="article-time">04/15 21:24</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.france24.com/en/tv-shows/a-propos/20260415-french-mps-introduce-bill-to-remove-statute-of-limitations-for-crimes-against-children" target="_blank" rel="noopener">French MPs introduce bill to remove statute of limitations for crimes against children</a>
-        </h3>
-        
-        <div class="article-description">French MPs have introduced a bill, aimed at removing the statute of limitations for crimes against children. Under current legislation, survivors of rape can pursue legal action up to 30 years after the day they turn 18. FRANCE 24's Sharon Gaffney speaks with Mié Kohiyama, co-founder of the Brave Movement.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">CoinTelegraph</span>
-            <span class="article-time">04/15 20:44</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://cointelegraph.com/news/kalshi-parents-monitoring-minors-prediction-markets?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Kalshi to create ‘portal for parents‘ on prediction markets: Report</a>
-        </h3>
-        
-        <div class="article-description">CEO Tarek Mansour said in an interview that Kalshi would prevent kids from using a parent’s ID to skirt its age restrictions by launching a parent portal and AI verification.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Investing.com</span>
-            <span class="article-time">04/15 20:33</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.investing.com/news/filings/form-144-core--main-for-15-april-93CH-4616537" target="_blank" rel="noopener">Form 144 Core & Main For: 15 April</a>
-        </h3>
-        
-        
+        <div class="article-description">Microsoft assigned CVE-2026-21520 , a CVSS 7.5 indirect prompt injection vulnerability, to Copilot Studio. Capsule Security discovered the flaw, coordinated disclosure with Microsoft, and the patch was deployed on January 15. Public disclosure went live on Wednesday. That CVE matters less for what it fixes and more for what it signals. Capsule’s research calls Microsoft’s decision to assign a CVE to a prompt injection vulnerability in an agentic platform “highly unusual.” Microsoft previously as</div>
         
     </article>
     
@@ -523,53 +370,222 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Ars Technica</span>
-            <span class="article-time">04/15 19:34</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://arstechnica.com/ai/2026/04/robot-dogs-now-read-gauges-and-thermometers-using-google-gemini/" target="_blank" rel="noopener">Boston Dynamics’ robot dog now reads gauges and thermometers with Google's AI</a>
-        </h3>
-        
-        <div class="article-description">Google's AI enables robots to read gauges while inspecting industrial facilities.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">CoinTelegraph</span>
+            <span class="article-source">VentureBeat</span>
             <span class="article-time">04/15 19:30</span>
         </div>
         <h3 class="article-title">
-            <a href="https://cointelegraph.com/news/coreweave-6b-deal-jane-street-ai-compute?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">CoreWeave signs $6B deal with Jane Street to provide AI compute power</a>
+            <a href="https://venturebeat.com/orchestration/meta-researchers-introduce-hyperagents-to-unlock-self-improving-ai-for-non-coding-tasks" target="_blank" rel="noopener">Meta researchers introduce 'hyperagents' to unlock self-improving AI for non-coding tasks</a>
         </h3>
         
-        <div class="article-description">Jane Street said it needs GPU-based computing power to keep its trading and research operations competitive amid growing adoption of AI.</div>
+        <div class="article-description">Creating self-improving AI systems is an important step toward deploying agents in dynamic environments, especially in enterprise production environments, where tasks are not always predictable, nor consistent. Current self-improving AI systems face severe limitations because they rely on fixed, handcrafted improvement mechanisms that only work under strict conditions such as software engineering. To overcome this practical challenge, researchers at Meta and several universities introduced “ hyp</div>
         
     </article>
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Dark Reading</span>
-            <span class="article-time">04/15 19:30</span>
+            <span class="article-source">TechCrunch AI</span>
+            <span class="article-time">04/15 19:28</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.darkreading.com/cloud-security/navigating-unique-security-risks-asias-digital-supply-chain" target="_blank" rel="noopener">Navigating the Unique Security Risks of Asia's Digital Supply Chain</a>
+            <a href="https://techcrunch.com/2026/04/15/openai-updates-its-agents-sdk-to-help-enterprises-build-safer-more-capable-agents/" target="_blank" rel="noopener">OpenAI updates its Agents SDK to help enterprises build safer, more capable agents</a>
         </h3>
         
-        <div class="article-description">Regulatory differences, interconnected digital ecosystems, and the rise of AI have created a complex supply chain Asian organizations must wrangle.</div>
+        <div class="article-description">OpenAI has expanded the capabilities of its agent-building toolkit, as agentic AI continues to grow in popularity.</div>
         
     </article>
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Al Jazeera</span>
-            <span class="article-time">04/15 19:29</span>
+            <span class="article-source">TechCrunch AI</span>
+            <span class="article-time">04/15 18:55</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.aljazeera.com/video/newsfeed/2026/4/15/pakistani-army-chief-in-tehran-amid-bid-to-restart-us-talks?traffic_source=rss" target="_blank" rel="noopener">Pakistani army chief in Tehran amid bid to restart US talks</a>
+            <a href="https://techcrunch.com/2026/04/15/hightouch-reaches-100m-arr-fueled-by-marketing-tools-powered-by-ai/" target="_blank" rel="noopener">Hightouch reaches $100M ARR fueled by marketing tools powered by AI</a>
         </h3>
         
-        <div class="article-description">Pakistan’s army chief has arrived in Iran for high-level talks aimed at reviving negotiations between Iran and the US.</div>
+        <div class="article-description">The startup says it grew its ARR by $70 million in just 20 months after launching an AI agent platform for marketers.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">TechCrunch AI</span>
+            <span class="article-time">04/15 18:51</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://techcrunch.com/2026/04/15/linkedin-data-shows-ai-isnt-to-blame-for-hiring-decline-yet/" target="_blank" rel="noopener">LinkedIn data shows AI isn’t to blame for hiring decline… yet</a>
+        </h3>
+        
+        <div class="article-description">LinkedIn says hiring is down 20% since 2022, but blames higher interest rates — not AI — for the slowdown.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">VentureBeat</span>
+            <span class="article-time">04/15 18:40</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://venturebeat.com/orchestration/we-tested-anthropics-redesigned-claude-code-desktop-app-and-routines-heres-what-enterprises-should-know" target="_blank" rel="noopener">We tested Anthropic’s redesigned Claude Code desktop app and 'Routines' — here's what enterprises should know</a>
+        </h3>
+        
+        <div class="article-description">The transition from AI as a chatbot to AI as a workforce is no longer a theoretical projection; it has become the primary design philosophy for the modern developer&#x27;s toolkit. On April 14, 2026, Anthropic signaled this shift with a dual release: a complete redesign of the Claude Code desktop app (for Mac and Windows) and the launch of &quot; Routines &quot; in research preview. These updates suggest that for the modern enterprise, the developer&#x27;s role is shifting from a solo practition</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">TechCrunch AI</span>
+            <span class="article-time">04/15 18:38</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://techcrunch.com/2026/04/15/ai-learning-app-gizmo-levels-up-with-13m-users-and-a-22m-investment/" target="_blank" rel="noopener">AI learning app Gizmo levels up with 13M users and a $22M investment</a>
+        </h3>
+        
+        <div class="article-description">Gizmo, an AI-powered learning platform, has attracted more than 13 million users and just secured $22 million in Series A funding.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">TechCrunch AI</span>
+            <span class="article-time">04/15 18:33</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://techcrunch.com/2026/04/15/can-ai-judge-journalism-a-thiel-backed-startup-says-yes-even-if-it-risks-chilling-whistleblowers/" target="_blank" rel="noopener">Can AI judge journalism? A Thiel-backed startup says yes, even if it risks chilling whistleblowers</a>
+        </h3>
+        
+        <div class="article-description">Objection, a Thiel-backed startup, aims to use AI to judge journalism, letting users pay to challenge stories. Critics warn it could chill whistleblowers and reshape how media accountability works.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">TechCrunch AI</span>
+            <span class="article-time">04/15 18:22</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://techcrunch.com/2026/04/15/google-rolls-out-a-native-gemini-app-for-mac/" target="_blank" rel="noopener">Google rolls out a native Gemini app for Mac</a>
+        </h3>
+        
+        <div class="article-description">You can share anything on their screen with Gemini to get help with what they're looking at in the moment, including local files.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">The Verge AI</span>
+            <span class="article-time">04/15 18:10</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.theverge.com/tech/912638/google-gemini-mac-app" target="_blank" rel="noopener">Google launches a Gemini AI app on Mac</a>
+        </h3>
+        
+        <div class="article-description">Google is launching a new Gemini app on Mac that allows you to interact with the AI assistant without switching windows on your desktop. With the app, you can use the Option + Space shortcut to pull up a floating chat bubble, where you can ask Gemini questions and share your window. Before sharing your [&#8230;]</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Wired AI</span>
+            <span class="article-time">04/15 18:00</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.wired.com/story/ai-could-democratize-one-of-techs-most-valuable-resources/" target="_blank" rel="noopener">AI Could Democratize One of Tech's Most Valuable Resources</a>
+        </h3>
+        
+        <div class="article-description">AI is making it easier to design chips and optimize software for different silicon. Some startups envision a revolution in chipmaking.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">TechCrunch AI</span>
+            <span class="article-time">04/15 17:58</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://techcrunch.com/podcast/the-musician-turned-biotech-founder-waiting-to-fundraise/" target="_blank" rel="noopener">The musician-turned-biotech-founder waiting to fundraise</a>
+        </h3>
+        
+        <div class="article-description">When Grammy-nominated singer-songwriter&#160;Aloe Blacc&#160;got COVID despite being vaccinated and boosted, he tried to fund research for a better solution.&#160;What&#160;he&#160;quickly&#160;found&#160;out? You&#160;can&#8217;t&#160;just write a check in biotech. Regulators require a commercialization plan, and philanthropy&#160;doesn&#8217;t&#160;move science through clinical trials or get you a license on university IP. Now,&#160;he&#8217;s&#160;bootstrapping a cancer drug platform targetin</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">VentureBeat</span>
+            <span class="article-time">04/15 17:52</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://venturebeat.com/orchestration/ais-next-bottleneck-isnt-the-models-its-whether-agents-can-think-together" target="_blank" rel="noopener">AI's next bottleneck isn't the models — it's whether agents can think together</a>
+        </h3>
+        
+        <div class="article-description">AI agents can connect together, but they cannot think together. That’s a huge difference and a bottleneck for next-gen systems, says Outshift by Cisco’s SVP and GM Vijoy Pandey. As he describes the current state of AI: Agents can be stitched together in a workflow or plug into a supervisor model — but there&#x27;s no semantic alignment, no shared context. They’re essentially working from scratch each go-around. This calls for next-level infrastructure, or what Pandey describes as the &quot;inter</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">TechCrunch AI</span>
+            <span class="article-time">04/15 17:24</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://techcrunch.com/2026/04/15/indias-vibe-coding-startup-emergent-enters-openclaw-like-ai-agent-space/" target="_blank" rel="noopener">India’s vibe-coding startup Emergent enters OpenClaw-like AI agent space</a>
+        </h3>
+        
+        <div class="article-description">Emergent's Wingman lets users manage and automate tasks through chat on platforms like WhatsApp and Telegram.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">AI News</span>
+            <span class="article-time">04/15 16:28</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.artificialintelligence-news.com/news/commvault-launches-ctrl-z-for-cloud-ai-workloads/" target="_blank" rel="noopener">Commvault launches a ‘Ctrl-Z’ for cloud AI workloads</a>
+        </h3>
+        
+        <div class="article-description">Enterprise cloud environments now have access to an undo feature for AI agents following the deployment of Commvault AI Protect. Autonomous software now roams across infrastructure, potentially deleting files, reading databases, spinning up server clusters, and even rewriting access policies. Commvault identified this governance issue and the data protection vendor has launched AI Protect, a [&#8230;] The post Commvault launches a ‘Ctrl-Z’ for cloud AI workloads appeared first on AI News .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">The Verge AI</span>
+            <span class="article-time">04/15 16:13</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.theverge.com/news/912484/allbirds-ai-hyperscale" target="_blank" rel="noopener">Allbirds announced a switch from shoes to AI and its stock jumped 600 percent</a>
+        </h3>
+        
+        <div class="article-description">Allbirds had a hit a decade ago with its Wool Runner shoes, but after a $4 billion IPO in 2021, the business never turned a profit, and sales dropped nearly 50 percent between 2022 and 2025. The company recently announced it would sell off its name and assets for $39 million to American Exchange after [&#8230;]</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">DeepMind Blog</span>
+            <span class="article-time">04/15 16:03</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://deepmind.google/blog/gemini-3-1-flash-tts-the-next-generation-of-expressive-ai-speech/" target="_blank" rel="noopener">Gemini 3.1 Flash TTS: the next generation of expressive AI speech</a>
+        </h3>
+        
+        <div class="article-description">Our newest audio model introduces granular audio tags that give you precise control to direct AI speech for expressive audio generation.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Wired AI</span>
+            <span class="article-time">04/15 14:58</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.wired.com/story/allbirds-is-pivoting-to-ai-compute-sure-why-not/" target="_blank" rel="noopener">Allbirds Is Pivoting to AI Compute. Sure, Why Not</a>
+        </h3>
+        
+        <div class="article-description">Once a $4 billion apparel juggernaut, Allbirds will rebrand as NewBird AI, a “GPU-as-a-Service” company. Hey, if you can't beat ’em, join ’em.</div>
         
     </article>
     
@@ -580,7 +596,7 @@
             <div class="category-header" style="border-color: #f87171;">
                 <span class="category-icon">🔒</span>
                 <h2 class="category-title">網路安全</h2>
-                <span class="category-count" style="background: #f87171;">55 篇</span>
+                <span class="category-count" style="background: #f87171;">90 篇</span>
             </div>
             <div class="articles-grid">
                 
@@ -599,19 +615,6 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">VentureBeat</span>
-            <span class="article-time">04/15 20:58</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://venturebeat.com/security/microsoft-salesforce-copilot-agentforce-prompt-injection-cve-agent-remediation-playbook" target="_blank" rel="noopener">Microsoft patched a Copilot Studio prompt injection. The data exfiltrated anyway.</a>
-        </h3>
-        
-        <div class="article-description">Microsoft assigned CVE-2026-21520 , a CVSS 7.5 indirect prompt injection vulnerability, to Copilot Studio. Capsule Security discovered the flaw, coordinated disclosure with Microsoft, and the patch was deployed on January 15. Public disclosure went live on Wednesday. That CVE matters less for what it fixes and more for what it signals. Capsule’s research calls Microsoft’s decision to assign a CVE to a prompt injection vulnerability in an agentic platform “highly unusual.” Microsoft previously as</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
             <span class="article-source">CyberScoop</span>
             <span class="article-time">04/15 20:17</span>
         </div>
@@ -625,40 +628,27 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">BBC World</span>
-            <span class="article-time">04/15 18:29</span>
+            <span class="article-source">Dark Reading</span>
+            <span class="article-time">04/15 19:30</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.bbc.com/news/articles/c9qddrdd8w2o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Trump threatens to fire Fed chair Powell if he doesn't leave in May</a>
+            <a href="https://www.darkreading.com/cloud-security/navigating-unique-security-risks-asias-digital-supply-chain" target="_blank" rel="noopener">Navigating the Unique Security Risks of Asia's Digital Supply Chain</a>
         </h3>
         
-        <div class="article-description">Donald Trump's threat marks the latest escalation in his ongoing spat with Jerome Powell.</div>
+        <div class="article-description">Regulatory differences, interconnected digital ecosystems, and the rise of AI have created a complex supply chain Asian organizations must wrangle.</div>
         
     </article>
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">France24</span>
-            <span class="article-time">04/15 18:16</span>
+            <span class="article-source">CyberScoop</span>
+            <span class="article-time">04/15 18:51</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.france24.com/en/tv-shows/the-debate/20260415-will-the-gulf-ever-be-the-same-trump-iran-and-the-arabian-peninsula" target="_blank" rel="noopener">Will the Gulf ever be the same? Trump, Iran and the Arabian Peninsula</a>
+            <a href="https://cyberscoop.com/executive-orders-likely-ahead-in-next-steps-for-national-cyber-strategy/" target="_blank" rel="noopener">Executive orders likely ahead in next steps for national cyber strategy</a>
         </h3>
         
-        <div class="article-description">Iran proving that missiles don't need to travel thousands of kilometres. Across the Gulf is all it takes to force the world’s mightiest army to the bargaining table. Pressure on the choke point for one-fifth of the planet’s oil and gas exposing the vulnerability of Arabian peninsula monarchies.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Al Jazeera</span>
-            <span class="article-time">04/15 17:49</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.aljazeera.com/video/featured-documentaries/2026/4/15/blood-sweat-and-sugar?traffic_source=rss" target="_blank" rel="noopener">Blood, Sweat and Sugar</a>
-        </h3>
-        
-        <div class="article-description">The sugar industry’s bitter legacy, built on slavery, exploitation and environmental damage, is still resonating today.</div>
+        <div class="article-description">National Cyber Director Sean Cairncross said execution of the strategy is “rolling forward actively.” The post Executive orders likely ahead in next steps for national cyber strategy appeared first on CyberScoop .</div>
         
     </article>
     
@@ -677,27 +667,27 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Al Jazeera</span>
+            <span class="article-source">SecurityWeek</span>
             <span class="article-time">04/15 16:46</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.aljazeera.com/video/newsfeed/2026/4/15/israels-high-court-hears-petitions-to-oust-ben-gvir?traffic_source=rss" target="_blank" rel="noopener">Israel’s High Court hears petitions to oust Ben-Gvir</a>
+            <a href="https://www.securityweek.com/sweden-blames-pro-russian-group-for-cyberattack-last-year-on-its-energy-infrastructure/" target="_blank" rel="noopener">Sweden Blames Pro-Russian Group for Cyberattack Last Year on Its Energy Infrastructure</a>
         </h3>
         
-        <div class="article-description">Israel’s High Court heard petitions to oust Israel’s far-right National Security Minister Itamar Ben-Gvir.</div>
+        <div class="article-description">In what was Sweden’s first public mention of the attack, the country’s minister for civil defense said it targeted a heating plant in western Sweden. The post Sweden Blames Pro-Russian Group for Cyberattack Last Year on Its Energy Infrastructure appeared first on SecurityWeek .</div>
         
     </article>
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">CoinDesk</span>
-            <span class="article-time">04/15 16:35</span>
+            <span class="article-source">Dark Reading</span>
+            <span class="article-time">04/15 15:12</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.coindesk.com/opinion/2026/04/15/wall-street-won-t-buy-trustless-security-promises" target="_blank" rel="noopener">Wall Street won’t buy ‘trustless’ security promises</a>
+            <a href="https://www.darkreading.com/cyber-risk/preparing-q-day-quantum-risk-management" target="_blank" rel="noopener">Prepping for 'Q-Day': Why Quantum Risk Management Should Start Now</a>
         </h3>
         
-        
+        <div class="article-description">Quantum computers are coming and may impact systems in unexpected ways, and it will &quot;take years to be fully quantum-safe, if ever,&quot; cryptography expert warns.</div>
         
     </article>
     
@@ -716,14 +706,66 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">TechCrunch</span>
-            <span class="article-time">04/15 14:21</span>
+            <span class="article-source">Dark Reading</span>
+            <span class="article-time">04/15 14:38</span>
         </div>
         <h3 class="article-title">
-            <a href="https://techcrunch.com/2026/04/15/sweden-blames-russian-hackers-for-attempting-destructive-cyberattack-on-thermal-plant/" target="_blank" rel="noopener">Sweden blames Russian hackers for attempting ‘destructive’ cyberattack on thermal plant</a>
+            <a href="https://www.darkreading.com/cyber-risk/audit-big-tech-ignores-data-collection-requests" target="_blank" rel="noopener">Audit: Big Tech Often Ignores CA Privacy Law Opt-Out Requests</a>
         </h3>
         
-        <div class="article-description">Sweden's minister for civil defense said Russian hackers are "now attempting destructive cyber attacks against organizations in Europe."</div>
+        <div class="article-description">Google, Meta, and Microsoft about half the time don't comply with requests to opt out of online tracking per a California law mandate, privacy watchdog finds.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">CyberScoop</span>
+            <span class="article-time">04/15 13:59</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://cyberscoop.com/openai-expands-trusted-access-for-cyber-to-thousands-for-cybersecurity/" target="_blank" rel="noopener">OpenAI expands Trusted Access for Cyber program with new GPT 5.4 Cyber model</a>
+        </h3>
+        
+        <div class="article-description">A new cybersecurity-focused variant of ChatGPT and an expanded access program put OpenAI in direct competition with Anthropic's Project Glasswing — and raises fresh questions about who gets to wield the most powerful security AI. The post OpenAI expands Trusted Access for Cyber program with new GPT 5.4 Cyber model appeared first on CyberScoop .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">SecurityWeek</span>
+            <span class="article-time">04/15 13:56</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.securityweek.com/capsule-security-emerges-from-stealth-with-7-million-in-funding/" target="_blank" rel="noopener">Capsule Security Emerges From Stealth With $7 Million in Funding</a>
+        </h3>
+        
+        <div class="article-description">The Israeli startup aims to secure AI agents at runtime, continuously monitoring their behavior to prevent unsafe actions. The post Capsule Security Emerges From Stealth With $7 Million in Funding appeared first on SecurityWeek .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">SecurityWeek</span>
+            <span class="article-time">04/15 13:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.securityweek.com/by-design-flaw-in-mcp-could-enable-widespread-ai-supply-chain-attacks/" target="_blank" rel="noopener">‘By Design’ Flaw in MCP Could Enable Widespread AI Supply Chain Attacks</a>
+        </h3>
+        
+        <div class="article-description">Researchers warn that a flaw in Anthropic’s Model Context Protocol allows unsanitized commands to execute silently, enabling full system compromise across widely used AI environments. The post ‘By Design’ Flaw in MCP Could Enable Widespread AI Supply Chain Attacks appeared first on SecurityWeek .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">SecurityWeek</span>
+            <span class="article-time">04/15 13:24</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.securityweek.com/100-chrome-extensions-steal-user-data-open-backdoor/" target="_blank" rel="noopener">100 Chrome Extensions Steal User Data, Create Backdoor</a>
+        </h3>
+        
+        <div class="article-description">Published through five accounts, the extensions appear part of a coordinated campaign based on shared C&#038;C infrastructure. The post 100 Chrome Extensions Steal User Data, Create Backdoor appeared first on SecurityWeek .</div>
         
     </article>
     
@@ -768,79 +810,53 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">MIT Technology Review AI</span>
-            <span class="article-time">04/15 11:26</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.technologyreview.com/2026/04/15/1135898/cyberscammers-bypassing-bank-telegram/" target="_blank" rel="noopener">Cyberscammers are bypassing banks’ security with illicit tools sold on Telegram</a>
-        </h3>
-        
-        <div class="article-description">From inside a money-laundering center in Cambodia, an employee opens a popular Vietnamese banking app on his phone. The app asks him to upload a photo associated with the account, so he clicks on a picture of a 30-something Asian man. Next, the app requests to open the camera for a video “liveness” check. The&#8230;</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
             <span class="article-source">SecurityWeek</span>
-            <span class="article-time">04/15 10:58</span>
+            <span class="article-time">04/15 12:10</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.securityweek.com/10-domain-could-have-handed-hackers-25k-endpoints-including-in-ot-and-gov-networks/" target="_blank" rel="noopener">$10 Domain Could Have Handed Hackers 25k Endpoints, Including in OT and Gov Networks</a>
+            <a href="https://www.securityweek.com/mirax-rat-targeting-android-users-in-europe/" target="_blank" rel="noopener">Mirax RAT Targeting Android Users in Europe</a>
         </h3>
         
-        <div class="article-description">Researchers found adware capable of killing cybersecurity products and pushing more dangerous payloads to infected systems. The post $10 Domain Could Have Handed Hackers 25k Endpoints, Including in OT and Gov Networks appeared first on SecurityWeek .</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">SecurityWeek</span>
-            <span class="article-time">04/15 10:25</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.securityweek.com/trump-urges-extending-foreign-surveillance-program-as-some-lawmakers-push-for-us-privacy-protections/" target="_blank" rel="noopener">Trump Urges Extending Foreign Surveillance Program as Some Lawmakers Push for US Privacy Protections</a>
-        </h3>
-        
-        <div class="article-description">Congress is set to take up the reauthorization of a divisive program that lets U.S. spy agencies pore over foreigners’ calls, texts and emails. The post Trump Urges Extending Foreign Surveillance Program as Some Lawmakers Push for US Privacy Protections appeared first on SecurityWeek .</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">CyberScoop</span>
-            <span class="article-time">04/15 10:00</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://cyberscoop.com/ai-chip-smuggling-china-export-controls-enforcement-op-ed/" target="_blank" rel="noopener">We’re only seeing the tip of the chip-smuggling iceberg</a>
-        </h3>
-        
-        <div class="article-description">A string of federal indictments has exposed a pervasive shadow network of data centers and fake products spanning Southeast Asia. To secure national security, the U.S. must move enforcement from the airport gate to the factory floor. The post We’re only seeing the tip of the chip-smuggling iceberg appeared first on CyberScoop .</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">The Hacker News</span>
-            <span class="article-time">04/15 08:40</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://thehackernews.com/2026/04/microsoft-issues-patches-for-sharepoint.html" target="_blank" rel="noopener">Microsoft Issues Patches for SharePoint Zero-Day and 168 Other New Vulnerabilities</a>
-        </h3>
-        
-        <div class="article-description">Microsoft on Tuesday released updates to address a&nbsp;record 169 security&nbsp;flaws across its product portfolio, including one vulnerability that&nbsp;has been actively&nbsp;exploited in the&nbsp;wild. Of these 169 vulnerabilities, 157 are rated Important, eight are rated&nbsp;Critical, three are rated Moderate,&nbsp;and one is rated Low in&nbsp;severity. Ninety-three of the flaws are</div>
+        <div class="article-description">Offered as a MaaS to a small number of affiliates, mainly Russian speakers, the RAT can turn devices into residential proxy nodes. The post Mirax RAT Targeting Android Users in Europe appeared first on SecurityWeek .</div>
         
     </article>
     
     <article class="article-card">
         <div class="article-header">
             <span class="article-source">Dark Reading</span>
-            <span class="article-time">04/15 00:00</span>
+            <span class="article-time">04/15 12:00</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.darkreading.com/cloud-security/microsoft-bets-10-billion-to-boost-japan-s-ai-cybersecurity" target="_blank" rel="noopener">Microsoft Bets $10B to Boost Japan's AI, Cybersecurity</a>
+            <a href="https://www.darkreading.com/cloud-security/microsoft-salesforce-patch-ai-agent-data-leak-flaws" target="_blank" rel="noopener">Microsoft, Salesforce Patch AI Agent Data Leak Flaws</a>
         </h3>
         
-        <div class="article-description">The deal aims to accelerate AI adoption, train workers, and develop cybersecurity partnerships — the latest move by a hyperscaler to compete for sovereign AI and data centers.</div>
+        <div class="article-description">Two recently fixed prompt injections in Salesforce Agentforce and Microsoft Copilot would have enabled an external attacker to leak sensitive data.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">SecurityWeek</span>
+            <span class="article-time">04/15 11:38</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.securityweek.com/two-vulnerabilities-patched-in-ivanti-neurons-for-itsm/" target="_blank" rel="noopener">Two Vulnerabilities Patched in Ivanti Neurons for ITSM</a>
+        </h3>
+        
+        <div class="article-description">The flaws could allow a remote attacker to maintain access after their account has been disabled and to access information from other user sessions. The post Two Vulnerabilities Patched in Ivanti Neurons for ITSM appeared first on SecurityWeek .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">The Hacker News</span>
+            <span class="article-time">04/15 11:30</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://thehackernews.com/2026/04/deterministic-agentic-ai-architecture.html" target="_blank" rel="noopener">Deterministic + Agentic AI: The Architecture Exposure Validation Requires</a>
+        </h3>
+        
+        <div class="article-description">Few technologies have moved from experimentation to boardroom mandate as quickly as AI. Across&nbsp;industries, leadership teams have embraced its broader potential, and boards, investors, and executives are already pushing organizations to adopt it across operational and security functions.&nbsp;Pentera’s AI Security and Exposure Report&nbsp;2026 reflects that&nbsp;momentum: every CISO surveyed</div>
         
     </article>
     
@@ -851,33 +867,20 @@
             <div class="category-header" style="border-color: #60a5fa;">
                 <span class="category-icon">💻</span>
                 <h2 class="category-title">科技</h2>
-                <span class="category-count" style="background: #60a5fa;">76 篇</span>
+                <span class="category-count" style="background: #60a5fa;">66 篇</span>
             </div>
             <div class="articles-grid">
                 
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">MarketWatch</span>
-            <span class="article-time">04/15 23:18</span>
+            <span class="article-source">Wired</span>
+            <span class="article-time">04/15 22:53</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.marketwatch.com/story/how-the-globalstar-purchase-could-turn-amazons-leo-into-a-satellite-powerhouse-4b27cdf5?mod=mw_rss_topstories" target="_blank" rel="noopener">How the Globalstar purchase could turn Amazon’s Leo into a satellite powerhouse</a>
+            <a href="https://www.wired.com/story/the-last-airbender-leak-fans-say-paramount-deserves-fallout/" target="_blank" rel="noopener">‘Avatar: Aang, The Last Airbender’ Leaked Online. Some Fans Say Paramount Deserves the Fallout</a>
         </h3>
         
-        <div class="article-description">The Globalstar deal may seem trivial relative to Amazon’s size, but it represents an “important signal” that Amazon is committed to space.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 23:04</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891071-concurrent-technologies-plc-2025-q4-results-earnings-call-presentation?source=feed_all_articles" target="_blank" rel="noopener">Concurrent Technologies Plc 2025 Q4 - Results - Earnings Call Presentation</a>
-        </h3>
-        
-        
+        <div class="article-description">After the full movie leaked, animators mourned the chance to release their work as intended. Others feel the leak is justified in light of Paramount’s marketing blunders and association with Trump.</div>
         
     </article>
     
@@ -891,32 +894,6 @@
         </h3>
         
         <div class="article-description">Nuclear startup X-energy hit the road today to sell prospective investors on its initial public offering.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 22:41</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891065-helios-technologies-the-fundamentals-are-starting-to-heat-up-upgrade?source=feed_all_articles" target="_blank" rel="noopener">Helios Technologies: The Fundamentals Are Starting To Heat Up (Upgrade)</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 22:32</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891063-equinor-earnings-may-disappoint-rating-downgrade?source=feed_all_articles" target="_blank" rel="noopener">Equinor: Earnings May Disappoint (Rating Downgrade)</a>
-        </h3>
-        
-        
         
     </article>
     
@@ -961,19 +938,6 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">MarketWatch</span>
-            <span class="article-time">04/15 22:00</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.marketwatch.com/story/googles-stake-in-spacex-could-be-worth-more-than-most-companies-on-the-planet-9ef1a6bb?mod=mw_rss_topstories" target="_blank" rel="noopener">Google’s stake in SpaceX could be worth more than most companies on the planet</a>
-        </h3>
-        
-        <div class="article-description">The search giant has a lot to gain from SpaceX’s upcoming initial public offering.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
             <span class="article-source">TechCrunch</span>
             <span class="article-time">04/15 21:52</span>
         </div>
@@ -987,27 +951,14 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 21:23</span>
+            <span class="article-source">TechCrunch</span>
+            <span class="article-time">04/15 21:38</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891045-kqqq-collect-tax-efficient-dividends-from-tech-titans?source=feed_all_articles" target="_blank" rel="noopener">KQQQ: Collect Tax-Efficient Dividends From Tech Titans</a>
+            <a href="https://techcrunch.com/2026/04/15/wait-could-they-still-actually-break-up-live-nation/" target="_blank" rel="noopener">Wait, could they still actually break up Live Nation?</a>
         </h3>
         
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Al Jazeera</span>
-            <span class="article-time">04/15 21:05</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.aljazeera.com/news/2026/4/15/israel-appoints-first-ambassador-to-somaliland?traffic_source=rss" target="_blank" rel="noopener">Israel appoints first ambassador to Somaliland</a>
-        </h3>
-        
-        <div class="article-description">The decision comes months after Israel became the first country to recognise the territory, in a widely condemned move.</div>
+        <div class="article-description">A federal jury found that Live Nation has acted illegally as a monopoly -- but the company just came to a tentative settlement with the DOJ last month.</div>
         
     </article>
     
@@ -1026,27 +977,14 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Investing.com</span>
-            <span class="article-time">04/15 20:32</span>
+            <span class="article-source">Ars Technica</span>
+            <span class="article-time">04/15 20:36</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.investing.com/news/company-news/cineverse-appoints-sean-mccabe-as-chief-financial-officer-93CH-4616535" target="_blank" rel="noopener">Cineverse appoints Sean McCabe as chief financial officer</a>
+            <a href="https://arstechnica.com/gadgets/2026/04/totalrecall-reloaded-tool-finds-a-side-entrance-to-windows-11s-recall-database/" target="_blank" rel="noopener">"TotalRecall Reloaded" tool finds a side entrance to Windows 11's Recall database</a>
         </h3>
         
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">France24</span>
-            <span class="article-time">04/15 20:06</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.france24.com/en/l-abuso-real-italian-magazine-cover-of-israeli-settler-sparks-online-storm" target="_blank" rel="noopener">'L’Abuso': Real Italian magazine cover of Israeli settler sparks online storm</a>
-        </h3>
-        
-        <div class="article-description">Prominent left-leaning Italian weekly L’Espresso is at the centre of a diplomatic storm online, after the Israeli ambassador to Italy slammed its choice of front cover as "manipulative." The magazine titled its latest edition “L’Abuso” or “The Abuse,” illustrating the cover with a photo of an armed Israeli settler sneering, whilst pointing his smartphone at a visibly-distressed Palestinian woman.</div>
+        <div class="article-description">"The vault is solid. The delivery truck is not."</div>
         
     </article>
     
@@ -1078,14 +1016,14 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">VentureBeat</span>
-            <span class="article-time">04/15 19:30</span>
+            <span class="article-source">Ars Technica</span>
+            <span class="article-time">04/15 19:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://venturebeat.com/orchestration/meta-researchers-introduce-hyperagents-to-unlock-self-improving-ai-for-non-coding-tasks" target="_blank" rel="noopener">Meta researchers introduce 'hyperagents' to unlock self-improving AI for non-coding tasks</a>
+            <a href="https://arstechnica.com/ai/2026/04/robot-dogs-now-read-gauges-and-thermometers-using-google-gemini/" target="_blank" rel="noopener">Boston Dynamics’ robot dog now reads gauges and thermometers with Google's AI</a>
         </h3>
         
-        <div class="article-description">Creating self-improving AI systems is an important step toward deploying agents in dynamic environments, especially in enterprise production environments, where tasks are not always predictable, nor consistent. Current self-improving AI systems face severe limitations because they rely on fixed, handcrafted improvement mechanisms that only work under strict conditions such as software engineering. To overcome this practical challenge, researchers at Meta and several universities introduced “ hyp</div>
+        <div class="article-description">Google's AI enables robots to read gauges while inspecting industrial facilities.</div>
         
     </article>
     
@@ -1104,134 +1042,6 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Ars Technica</span>
-            <span class="article-time">04/15 18:50</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://arstechnica.com/culture/2026/04/new-teaser-gives-us-first-look-at-godzilla-minus-zero/" target="_blank" rel="noopener">New teaser gives us first look at Godzilla Minus Zero</a>
-        </h3>
-        
-        <div class="article-description">Director Takashi Yamazaki told Cinemacon attendees that sequel is first Japanese film shot for IMAX.</div>
-        
-    </article>
-    
-            </div>
-        </section>
-        
-        <section class="category-section">
-            <div class="category-header" style="border-color: #34d399;">
-                <span class="category-icon">📈</span>
-                <h2 class="category-title">經濟</h2>
-                <span class="category-count" style="background: #34d399;">16 篇</span>
-            </div>
-            <div class="articles-grid">
-                
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/16 00:25</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891079-new-all-time-highs-bull-market-confirmed?source=feed_all_articles" target="_blank" rel="noopener">New All-Time Highs; Bull Market Confirmed</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">MarketWatch</span>
-            <span class="article-time">04/16 00:12</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.marketwatch.com/story/live-nation-stock-falls-as-jury-finds-ticketing-giant-acted-as-an-illegal-monopoly-1f21ac77?mod=mw_rss_topstories" target="_blank" rel="noopener">Live Nation stock falls as jury finds ticketing giant acted as an illegal monopoly. Here’s what happens next.</a>
-        </h3>
-        
-        <div class="article-description">Shares of Live Nation sank on Wednesday after a jury found that the Ticketmaster parent had acted as an illegal monopoly over the ticketing industry, according to reports.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/16 00:10</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891076-producer-price-index-wholesale-inflation-up-0-5-percent-in-march?source=feed_all_articles" target="_blank" rel="noopener">Producer Price Index: Wholesale Inflation Up 0.5% In March</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">MarketWatch</span>
-            <span class="article-time">04/15 22:12</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.marketwatch.com/story/iran-war-is-a-major-source-of-uncertainty-for-u-s-businesses-feds-beige-book-says-52d45d7b?mod=mw_rss_topstories" target="_blank" rel="noopener">U.S. businesses hit the brakes on hiring and spending as Iran war dims optimism over economy, Fed report finds</a>
-        </h3>
-        
-        <div class="article-description">Many Fed districts also reported growing signs of financial strain among consumers, along with increased price sensitivity and rising demand at food banks.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Investing.com</span>
-            <span class="article-time">04/15 20:35</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.investing.com/news/stock-market-news/quidelortho-stock-plunges-on-weak-revenue-guidance-93CH-4616548" target="_blank" rel="noopener">QuidelOrtho stock plunges on weak revenue guidance</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Investing.com</span>
-            <span class="article-time">04/15 20:34</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.investing.com/news/sec-filings/concord-healthcare-files-annual-report-with-hong-kong-stock-exchange-93CH-4616547" target="_blank" rel="noopener">Concord Healthcare files annual report with Hong Kong Stock Exchange</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Investing.com</span>
-            <span class="article-time">04/15 20:34</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.investing.com/news/insider-trading-news/virtuix-holdings-ceo-goetgeluk-sells-66869-in-vtix-stock-93CH-4616545" target="_blank" rel="noopener">Virtuix Holdings CEO Goetgeluk sells $66869 in VTIX stock</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Investing.com</span>
-            <span class="article-time">04/15 20:34</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.investing.com/news/insider-trading-news/fitzgerald-of-stubhub-sells-10k-in-stock-93CH-4616544" target="_blank" rel="noopener">Fitzgerald of StubHub sells $10k in stock</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
             <span class="article-source">The Verge</span>
             <span class="article-time">04/15 19:09</span>
         </div>
@@ -1245,27 +1055,220 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Ars Technica</span>
-            <span class="article-time">04/15 16:08</span>
+            <span class="article-source">The Verge</span>
+            <span class="article-time">04/15 19:00</span>
         </div>
         <h3 class="article-title">
-            <a href="https://arstechnica.com/cars/2026/04/us-jobs-too-important-to-risk-chinese-car-imports-says-ford-ceo/" target="_blank" rel="noopener">US jobs too important to risk Chinese car imports, says Ford CEO</a>
+            <a href="https://www.theverge.com/policy/912680/ftc-ad-agency-settlement-trust-safety" target="_blank" rel="noopener">FTC pushes ad agencies into dropping brand safety rules</a>
         </h3>
         
-        <div class="article-description">China has enough spare capacity to swallow the entire US car market, says Ford's Jim Farley.</div>
+        <div class="article-description">The Federal Trade Commission (FTC) and a group of eight states have announced a proposed settlement with big ad agencies that will prevent them from working together to avoid certain platforms like X based on their political viewpoints. In a complaint, the FTC argues that ad agencies violated antitrust rules by agreeing to a common [&#8230;]</div>
         
     </article>
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">France24</span>
+            <span class="article-source">Wired</span>
+            <span class="article-time">04/15 18:55</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.wired.com/story/nasa-wants-to-put-nuclear-reactors-on-the-moon/" target="_blank" rel="noopener">NASA Wants to Put Nuclear Reactors on the Moon</a>
+        </h3>
+        
+        <div class="article-description">The White House has announced that NASA will work with the Departments of Defense and Energy to put nuclear reactors in orbit and on the surface of the moon.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">TechCrunch</span>
+            <span class="article-time">04/15 18:50</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://techcrunch.com/2026/04/15/feds-will-require-data-centers-to-show-their-power-bills/" target="_blank" rel="noopener">Feds will require data centers to show their power bills</a>
+        </h3>
+        
+        <div class="article-description">In a first, the U.S. Energy Information Agency said it will require data centers to disclose details of their energy use.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Ars Technica</span>
+            <span class="article-time">04/15 18:50</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arstechnica.com/culture/2026/04/new-teaser-gives-us-first-look-at-godzilla-minus-zero/" target="_blank" rel="noopener">New teaser gives us first look at Godzilla Minus Zero</a>
+        </h3>
+        
+        <div class="article-description">Director Takashi Yamazaki told Cinemacon attendees that sequel is first Japanese film shot for IMAX.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Ars Technica</span>
+            <span class="article-time">04/15 18:33</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://arstechnica.com/space/2026/04/space-force-looks-at-moving-significant-number-of-launches-from-ula-to-spacex/" target="_blank" rel="noopener">Vulcan woes will "absolutely" be a factor in Pentagon's next rocket competition</a>
+        </h3>
+        
+        <div class="article-description">"If the spacecraft is ready to go, that's going to give it a priority."</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">The Verge</span>
+            <span class="article-time">04/15 18:30</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.theverge.com/tech/911809/ikea-varmblixt-smart-donut-lamp-review-matter-thread" target="_blank" rel="noopener">Ikea&#8217;s smart donut lamp is a sweet treat</a>
+        </h3>
+        
+        <div class="article-description">Ikea's popular Varmblixt lamp just got a smart home glow-up. The delightfully bulbous light now features color-changing, dimming, and smart home control. I tested the new smart lamp in my daughter's room and found it made a great bedside lamp and added a fun touch of ambiance to her space. While she's rarely a fan [&#8230;]</div>
+        
+    </article>
+    
+            </div>
+        </section>
+        
+        <section class="category-section">
+            <div class="category-header" style="border-color: #34d399;">
+                <span class="category-icon">📈</span>
+                <h2 class="category-title">經濟</h2>
+                <span class="category-count" style="background: #34d399;">12 篇</span>
+            </div>
+            <div class="articles-grid">
+                
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/15 22:52</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/3e91f018-d9c1-4ef4-a416-f80c97d930d8" target="_blank" rel="noopener">Goldman president warns private credit funds are not marketed properly</a>
+        </h3>
+        
+        <div class="article-description">John Waldron says vehicles lack ‘clarity that this is really not a liquid product’</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/15 21:43</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/7d30723d-f2b1-4d02-a9f0-76ccedb0f7ad" target="_blank" rel="noopener">S&P 500 hits record high as markets surge back from Iran shock</a>
+        </h3>
+        
+        <div class="article-description">Investors turn attention to strong Wall Street earnings and bet on swift end to the conflict</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/15 21:42</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/1f2d514d-4418-4b77-a3f5-2181080b670c" target="_blank" rel="noopener">Goldman traders wrongfooted as Iran war upended interest rate expectations</a>
+        </h3>
+        
+        <div class="article-description">Wall Street bank’s rates desk was key driver behind unexpected drop in fixed-income revenue</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/15 19:16</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/590c65f4-6261-4dd7-b8ea-73b78fa23479" target="_blank" rel="noopener">Veteran investor Mark Mobius dies at 89</a>
+        </h3>
+        
+        <div class="article-description">Renowned fund manager was a pioneer in emerging market investing</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/15 19:02</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/9fea256f-a60b-4d37-9ff0-c7c094cdda79" target="_blank" rel="noopener">Saudi wealth fund resets priorities after decade of heavy spending</a>
+        </h3>
+        
+        <div class="article-description">Governor says near-$1tn PIF will focus on efficiency without retreating from global deals</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/15 17:15</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/76dfb7ee-ebf4-4030-8c8f-1c0c23ef5b67" target="_blank" rel="noopener">Saudi Arabia’s PIF on verge of cutting support for LIV Golf</a>
+        </h3>
+        
+        <div class="article-description">Sovereign wealth fund reconsiders backing for lossmaking golf tour as Iran war prompts investment rethink</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/15 17:08</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/d0ac6c5f-c1c5-43cb-8f1f-eb3bea48eca3" target="_blank" rel="noopener">Trump threatens to fire Jay Powell and refuses to halt criminal probe</a>
+        </h3>
+        
+        <div class="article-description">US president insists Justice Department will not drop investigation into central bank chair</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/15 16:37</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/b35dc63e-b016-4ed4-a967-fd132cc552c4" target="_blank" rel="noopener">US crude exports hit record as Iran war disrupts Middle East supplies</a>
+        </h3>
+        
+        <div class="article-description">Foreign sales could push up US petrol prices and increase political pressure on Trump administration to curtail exports</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/15 16:06</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.ft.com/content/d6459373-c681-4787-9c52-48ccda530da7" target="_blank" rel="noopener">UK gas prices dip below pre-Iran war levels in boost for Reeves</a>
+        </h3>
+        
+        <div class="article-description">Concerns about a full-blown supply crisis recede as Asia cuts consumption</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Financial Times</span>
             <span class="article-time">04/15 15:30</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.france24.com/en/video/20260415-from-yaound%C3%A9-to-bamenda-cameroonians-await-pope-leo-xiv-s-visit" target="_blank" rel="noopener">From Yaoundé to Bamenda, Cameroonians await Pope Leo XIV’s visit</a>
+            <a href="https://www.ft.com/content/9c065130-31e9-4129-bf6b-da08723ccdb2" target="_blank" rel="noopener">Trading firm boss revealed as buyer of Nick Candy’s £275mn mansion</a>
         </h3>
         
-        <div class="article-description">Pope Leo XIV visits Cameroon from April 15th to 18th. During his stay, the pontiff will visit three cities in the country: Yaoundé, the capital; Douala, the economic hub; and Bamenda, the capital of the Northwest region, which has been gripped by a socio-political crisis for a decade. Two days before his arrival, the Christian community of Cameroon is preparing for Leo XIV, who will be the third pontiff to set foot on Cameroonian soil, as FRANCE 24’s team on the ground reports.</div>
+        <div class="article-description">Suneil Setiya of Quadrature Capital, a Labour donor, was behind the UK’s most expensive house purchase</div>
         
     </article>
     
@@ -1284,53 +1287,14 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Ars Technica</span>
-            <span class="article-time">04/15 13:38</span>
+            <span class="article-source">Financial Times</span>
+            <span class="article-time">04/15 11:26</span>
         </div>
         <h3 class="article-title">
-            <a href="https://arstechnica.com/space/2026/04/blue-origin-has-a-new-employee-stock-plan-but-not-everyone-is-happy/" target="_blank" rel="noopener">Blue Origin has a new employee stock plan, but not everyone is happy</a>
+            <a href="https://www.ft.com/content/927ef2c7-cbf3-4bc1-9bdd-f9884a09d878" target="_blank" rel="noopener">The weird resilience of the EU</a>
         </h3>
         
-        <div class="article-description">"We are being intentional about creating liquidity events."</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Ars Technica</span>
-            <span class="article-time">04/15 13:15</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://arstechnica.com/tech-policy/2026/04/its-tax-day-and-no-one-knows-how-to-file-for-prediction-market-winnings/" target="_blank" rel="noopener">It's Tax Day, and no one knows how to file for prediction market winnings</a>
-        </h3>
-        
-        <div class="article-description">It's time for Americans to pay taxes on prediction market winnings, but no one knows how.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">CoinDesk</span>
-            <span class="article-time">04/15 12:55</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.coindesk.com/markets/2026/04/15/prediction-market-volumes-to-hit-usd1-trillion-by-2030-with-robinhood-coinbase-as-key-players-bernstein-says" target="_blank" rel="noopener">Prediction market volumes to hit $1 trillion by 2030 with Robinhood, Coinbase as key players, Bernstein says</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Forex Crunch</span>
-            <span class="article-time">01/31 05:34</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.forexcrunch.com/blog/2026/01/31/gbp-usd-weekly-forecast-firm-usd-risks-break-of-1-37-eyes-on-boe-nfp/" target="_blank" rel="noopener">GBP/USD Weekly Forecast: Firm USD Risks Break of 1.37, Eyes on BoE, NFP</a>
-        </h3>
-        
-        <div class="article-description">The GBP/USD weekly forecast remains slightly subdued as the markets pared partial weekly gains amid dollar recovery and profit-taking. Fed’s data dependency and resilient UK economy continue to balance the GBP/USD. Market participants eye the US NFP and the BoE interest rate decision to gauge further directional bias. The GBP/USD price closed its second consecutive... The post GBP/USD Weekly Forecast: Firm USD Risks Break of 1.37, Eyes on BoE, NFP appeared first on Forex Crunch .</div>
+        <div class="article-description">A decade into the age of nationalism, the idea of quitting the club is still remarkably taboo</div>
         
     </article>
     
@@ -1341,10 +1305,36 @@
             <div class="category-header" style="border-color: #fbbf24;">
                 <span class="category-icon">🌍</span>
                 <h2 class="category-title">國際</h2>
-                <span class="category-count" style="background: #fbbf24;">105 篇</span>
+                <span class="category-count" style="background: #fbbf24;">91 篇</span>
             </div>
             <div class="articles-grid">
                 
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">France24</span>
+            <span class="article-time">04/16 01:27</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.france24.com/en/americas/20260416-growing-discontent-democrats-back-sanders-block-arms-sales-israel" target="_blank" rel="noopener">Growing discontent as 36 Democrats back Bernie Sanders’ bid to block arms sales to Israel</a>
+        </h3>
+        
+        <div class="article-description">More than three dozen Democrats backed a bid by Senator Bernie Sanders on Wednesday to block US arms sales to Israel, reflecting growing unease over Prime Minister Benjamin Netanyahu and conflicts in Gaza and Iran. The measures failed, opposed by Republicans, but underscored rising dissent within the Democratic Party.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/16 01:06</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/news/2026/4/16/russian-attack-on-ukraines-kyiv-kills-12-year-old-child-wounds-10?traffic_source=rss" target="_blank" rel="noopener">Russian attack on Ukraine’s Kyiv kills 12-year-old child, wounds 10</a>
+        </h3>
+        
+        <div class="article-description">Kyiv&#039;s mayor says the attacks hit Podilskyi and Obolonsky districts, causing fires and damage to residential buildings.</div>
+        
+    </article>
+    
     <article class="article-card">
         <div class="article-header">
             <span class="article-source">Al Jazeera</span>
@@ -1373,27 +1363,14 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">MarketWatch</span>
-            <span class="article-time">04/15 23:30</span>
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/15 23:45</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.marketwatch.com/story/my-friends-girlfriend-went-ballistic-after-he-gave-his-kids-19-000-a-year-is-this-a-red-flag-c894366f?mod=mw_rss_topstories" target="_blank" rel="noopener">My friend’s girlfriend went ‘ballistic’ after learning he gives his kids $19,000 a year. Is this a red flag?</a>
+            <a href="https://www.aljazeera.com/news/2026/4/15/el-salvador-publishes-law-allowing-life-sentences-for-minors-as-young-as-12?traffic_source=rss" target="_blank" rel="noopener">El Salvador publishes law allowing life sentences for minors as young as 12</a>
         </h3>
         
-        <div class="article-description">“He spent $1,000 on his girlfriend at Christmas and several hundred dollars on each of her children.”</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">CoinDesk</span>
-            <span class="article-time">04/15 23:08</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.coindesk.com/policy/2026/04/15/solana-policy-institute-backed-pac-spends-millions-to-jam-sherrod-brown-s-senate-run" target="_blank" rel="noopener">Solana Policy Institute-backed PAC spends millions to jam Sherrod Brown's Senate run</a>
-        </h3>
-        
-        
+        <div class="article-description">The new sentencing measure comes as President Nayib Bukele oversees a four-year-long state of emergency against crime.</div>
         
     </article>
     
@@ -1412,6 +1389,19 @@
     
     <article class="article-card">
         <div class="article-header">
+            <span class="article-source">BBC World</span>
+            <span class="article-time">04/15 22:56</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.bbc.com/news/articles/clyddyp19yyo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">Ticketmaster-owner Live Nation ran a monopoly and overcharged fans, jury finds</a>
+        </h3>
+        
+        <div class="article-description">The lawsuit said the firm's practices had led to higher ticket prices and worse service for customers.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
             <span class="article-source">Al Jazeera</span>
             <span class="article-time">04/15 22:53</span>
         </div>
@@ -1420,19 +1410,6 @@
         </h3>
         
         <div class="article-description">The Israeli army has bombed buildings in southern Lebanon’s Bint Jbeil district.</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Financial Times</span>
-            <span class="article-time">04/15 22:52</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.ft.com/content/3e91f018-d9c1-4ef4-a416-f80c97d930d8" target="_blank" rel="noopener">Goldman president warns private credit funds are not marketed properly</a>
-        </h3>
-        
-        <div class="article-description">John Waldron says vehicles lack ‘clarity that this is really not a liquid product’</div>
         
     </article>
     
@@ -1451,40 +1428,40 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 22:17</span>
+            <span class="article-source">France24</span>
+            <span class="article-time">04/15 22:06</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891059-nac-a-buy-for-long-duration-muni-value?source=feed_all_articles" target="_blank" rel="noopener">NAC: A Buy For Long Duration Muni Value</a>
+            <a href="https://www.france24.com/en/sport/20260415-bayern-munich-edge-real-madrid-champions-league-semi-finals" target="_blank" rel="noopener">Bayern Munich edge Real Madrid to reach Champions League semi-finals</a>
         </h3>
         
-        
+        <div class="article-description">Late goals from Luis Diaz and Michael Olise earned Bayern Munich a dramatic 4-3 win over Real Madrid on Wednesday, sealing a 6-4 aggregate victory and a Champions League semi-final against holders Paris Saint-Germain. Real Madrid had led three times in a high-tempo first half.</div>
         
     </article>
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">CoinDesk</span>
-            <span class="article-time">04/15 22:17</span>
+            <span class="article-source">France24</span>
+            <span class="article-time">04/15 21:55</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.coindesk.com/business/2026/04/15/justin-sun-blasts-trump-linked-wlfi-s-absurd-governance-vote-escalating-feud" target="_blank" rel="noopener">Justin Sun blasts Trump-linked WLFI's 'absurd' governance vote, escalating feud</a>
+            <a href="https://www.france24.com/en/middle-east/20260415-jailed-iranian-nobel-laureate-narges-mohammadi-critical-condition-supporters-say" target="_blank" rel="noopener">Jailed Iranian Nobel laureate Narges Mohammadi in critical condition, supporters say</a>
         </h3>
         
-        
+        <div class="article-description">The health of jailed Iranian Nobel Peace Prize laureate Narges Mohammadi is critical after she suffered a heart attack last month, supporters said on Wednesday. Her family and lawyers, allowed a second prison visit, reported a sharp deterioration in her condition, with her physical state now described as critical, her foundation said.</div>
         
     </article>
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Financial Times</span>
-            <span class="article-time">04/15 21:42</span>
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/15 21:45</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.ft.com/content/1f2d514d-4418-4b77-a3f5-2181080b670c" target="_blank" rel="noopener">Goldman traders wrongfooted as Iran war upended interest rate expectations</a>
+            <a href="https://www.aljazeera.com/news/2026/4/15/brazils-police-open-a-probe-into-presidential-candidate-flavio-bolsonaro?traffic_source=rss" target="_blank" rel="noopener">Brazil’s police open a probe into presidential candidate Flavio Bolsonaro</a>
         </h3>
         
-        <div class="article-description">Wall Street bank’s rates desk was key driver behind unexpected drop in fixed-income revenue</div>
+        <div class="article-description">Investigation centres on whether Bolsonaro committed defamation by linking Lula to crimes like drug trafficking.</div>
         
     </article>
     
@@ -1503,19 +1480,6 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 21:30</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4890980-gold-vs-debt-navigating-the-historical-shift-in-global-central-bank-reserves?source=feed_all_articles" target="_blank" rel="noopener">Gold Vs. Debt: Navigating The Historical Shift In Global Central Bank Reserves</a>
-        </h3>
-        
-        
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
             <span class="article-source">Al Jazeera</span>
             <span class="article-time">04/15 21:28</span>
         </div>
@@ -1529,14 +1493,14 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
+            <span class="article-source">France24</span>
             <span class="article-time">04/15 21:24</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891046-marzetti-volume-growth-nascent-clear-underweight?source=feed_all_articles" target="_blank" rel="noopener">Marzetti: Volume Growth Nascent, Clear Underweight</a>
+            <a href="https://www.france24.com/en/tv-shows/a-propos/20260415-french-mps-introduce-bill-to-remove-statute-of-limitations-for-crimes-against-children" target="_blank" rel="noopener">French MPs introduce bill to remove statute of limitations for crimes against children</a>
         </h3>
         
-        
+        <div class="article-description">French MPs have introduced a bill, aimed at removing the statute of limitations for crimes against children. Under current legislation, survivors of rape can pursue legal action up to 30 years after the day they turn 18. FRANCE 24's Sharon Gaffney speaks with Mié Kohiyama, co-founder of the Brave Movement.</div>
         
     </article>
     
@@ -1581,6 +1545,19 @@
     
     <article class="article-card">
         <div class="article-header">
+            <span class="article-source">Al Jazeera</span>
+            <span class="article-time">04/15 21:05</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.aljazeera.com/news/2026/4/15/israel-appoints-first-ambassador-to-somaliland?traffic_source=rss" target="_blank" rel="noopener">Israel appoints first ambassador to Somaliland</a>
+        </h3>
+        
+        <div class="article-description">The decision comes months after Israel became the first country to recognise the territory, in a widely condemned move.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
             <span class="article-source">BBC World</span>
             <span class="article-time">04/15 20:10</span>
         </div>
@@ -1592,19 +1569,6 @@
         
     </article>
     
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Al Jazeera</span>
-            <span class="article-time">04/15 19:56</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://www.aljazeera.com/news/2026/4/15/hungarys-magyar-urges-president-to-quit-vows-to-overhaul-state-media?traffic_source=rss" target="_blank" rel="noopener">Hungary’s Magyar urges president to quit, vows to overhaul state media</a>
-        </h3>
-        
-        <div class="article-description">Incoming Prime Minister Peter Magyar says his government could be formed by mid-May.</div>
-        
-    </article>
-    
             </div>
         </section>
         
@@ -1612,17 +1576,17 @@
             <div class="category-header" style="border-color: #f59e0b;">
                 <span class="category-icon">💹</span>
                 <h2 class="category-title">金融</h2>
-                <span class="category-count" style="background: #f59e0b;">72 篇</span>
+                <span class="category-count" style="background: #f59e0b;">100 篇</span>
             </div>
             <div class="articles-grid">
                 
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Investing.com Commodities</span>
-            <span class="article-time">04/16 08:45</span>
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/16 01:14</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.investing.com/analysis/the-100-barrel-is-back-trading-the-hormuz-havoc-200678520" target="_blank" rel="noopener">The $100 Barrel Is Back: Trading The Hormuz Havoc</a>
+            <a href="https://seekingalpha.com/article/4891078-jls-cef-mortgages-are-attractive?source=feed_all_articles" target="_blank" rel="noopener">JLS: Mortgages Are Attractive</a>
         </h3>
         
         
@@ -1631,11 +1595,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Investing.com Forex</span>
-            <span class="article-time">04/16 08:45</span>
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/16 01:11</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.investing.com/analysis/usdjpy-remains-capped-below-15900-20day-sma-in-focus-200678472" target="_blank" rel="noopener">USD/JPY Remains Capped Below 159.00, 20‑Day SMA in Focus</a>
+            <a href="https://seekingalpha.com/article/4890863-ubs-group-ag-ubss-ca-shareholder-analyst-call-transcript?source=feed_all_articles" target="_blank" rel="noopener">UBS Group AG (UBSS:CA) Shareholder/Analyst Call Transcript</a>
         </h3>
         
         
@@ -1644,11 +1608,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Investing.com Forex</span>
-            <span class="article-time">04/16 08:45</span>
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/16 01:04</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.investing.com/analysis/usdjpy-how-much-further-will-the-us-dollar-fall-200678493" target="_blank" rel="noopener">USD/JPY: How Much Further Will the US Dollar Fall?</a>
+            <a href="https://seekingalpha.com/article/4891083-fukuoka-reit-corporation-2026-q4-results-earnings-call-presentation?source=feed_all_articles" target="_blank" rel="noopener">Fukuoka REIT Corporation 2026 Q4 - Results - Earnings Call Presentation</a>
         </h3>
         
         
@@ -1657,11 +1621,141 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Investing.com Forex</span>
-            <span class="article-time">04/16 08:45</span>
+            <span class="article-source">MarketWatch</span>
+            <span class="article-time">04/16 01:01</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.investing.com/analysis/eurusd-sees-no-obstacles-to-growth-200678505" target="_blank" rel="noopener">EUR/USD Sees No Obstacles to Growth</a>
+            <a href="https://www.marketwatch.com/story/is-tesla-a-chip-stock-now-investors-are-cheering-a-semiconductor-milestone-56341cf8?mod=mw_rss_topstories" target="_blank" rel="noopener">Is Tesla a chip stock now? Investors are cheering a semiconductor milestone.</a>
+        </h3>
+        
+        <div class="article-description">The AI5 chip, which Tesla says will power humanoid robots and supercomputers, has completed a critical step.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">MarketWatch</span>
+            <span class="article-time">04/16 00:58</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.marketwatch.com/story/allbirds-ai-pivot-sends-its-stock-soaring-300-weve-seen-this-film-before-04665b32?mod=mw_rss_topstories" target="_blank" rel="noopener">Allbirds’ AI pivot sends its stock soaring nearly 600%. We’ve seen this movie before.</a>
+        </h3>
+        
+        <div class="article-description">It’s not unprecedented for struggling companies to latch on to the hot trend of the moment — remember the blockchain hype cycle?</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/16 00:55</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://seekingalpha.com/article/4891081-s-p-500-to-7000-nasdaq-100-points-to-ath-are-markets-getting-ahead-of-themselves?source=feed_all_articles" target="_blank" rel="noopener">S&P 500 To 7,000 And Nasdaq 100 Points To ATH: Are Markets Getting Ahead Of Themselves?</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/16 00:52</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://seekingalpha.com/article/4891075-power-solutions-stock-from-cautious-buy-to-disciplined-profit-booking-and-patient-wait?source=feed_all_articles" target="_blank" rel="noopener">Power Solutions: From Cautious Buy To Disciplined Profit Booking And A Patient Wait</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/16 00:51</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://seekingalpha.com/article/4891069-j-b-hunt-transport-services-inc-jbht-q1-2026-earnings-call-transcript?source=feed_all_articles" target="_blank" rel="noopener">J.B. Hunt Transport Services, Inc. (JBHT) Q1 2026 Earnings Call Transcript</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">MarketWatch</span>
+            <span class="article-time">04/16 00:47</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.marketwatch.com/story/how-the-globalstar-purchase-could-turn-amazons-leo-into-a-satellite-powerhouse-4b27cdf5?mod=mw_rss_topstories" target="_blank" rel="noopener">How the Globalstar purchase could turn Amazon’s Leo into a satellite powerhouse</a>
+        </h3>
+        
+        <div class="article-description">The Globalstar deal may seem trivial relative to Amazon’s size, but it represents an “important signal” that Amazon is committed to space.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/16 00:42</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://seekingalpha.com/article/4891074-dollar-tree-a-strong-bet-as-shoppers-seek-value?source=feed_all_articles" target="_blank" rel="noopener">Dollar Tree: A Strong Bet As Shoppers Seek Value</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/16 00:41</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://seekingalpha.com/article/4890992-fairfax-india-holdings-corporation-fih-u-ca-shareholder-analyst-call-transcript?source=feed_all_articles" target="_blank" rel="noopener">Fairfax India Holdings Corporation (FIH.U:CA) Shareholder/Analyst Call Transcript</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/16 00:25</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://seekingalpha.com/article/4891079-new-all-time-highs-bull-market-confirmed?source=feed_all_articles" target="_blank" rel="noopener">New All-Time Highs; Bull Market Confirmed</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">MarketWatch</span>
+            <span class="article-time">04/16 00:12</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.marketwatch.com/story/live-nation-stock-falls-as-jury-finds-ticketing-giant-acted-as-an-illegal-monopoly-1f21ac77?mod=mw_rss_topstories" target="_blank" rel="noopener">Live Nation stock falls as jury finds ticketing giant acted as an illegal monopoly. Here’s what happens next.</a>
+        </h3>
+        
+        <div class="article-description">Shares of Live Nation sank on Wednesday after a jury found that the Ticketmaster parent had acted as an illegal monopoly over the ticketing industry, according to reports.</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/16 00:10</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://seekingalpha.com/article/4891076-producer-price-index-wholesale-inflation-up-0-5-percent-in-march?source=feed_all_articles" target="_blank" rel="noopener">Producer Price Index: Wholesale Inflation Up 0.5% In March</a>
         </h3>
         
         
@@ -1683,6 +1777,45 @@
     
     <article class="article-card">
         <div class="article-header">
+            <span class="article-source">MarketWatch</span>
+            <span class="article-time">04/15 23:30</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.marketwatch.com/story/my-friends-girlfriend-went-ballistic-after-he-gave-his-kids-19-000-a-year-is-this-a-red-flag-c894366f?mod=mw_rss_topstories" target="_blank" rel="noopener">My friend’s girlfriend went ‘ballistic’ after learning he gives his kids $19,000 a year. Is this a red flag?</a>
+        </h3>
+        
+        <div class="article-description">“He spent $1,000 on his girlfriend at Christmas and several hundred dollars on each of her children.”</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Seeking Alpha</span>
+            <span class="article-time">04/15 23:09</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://seekingalpha.com/article/4891073-hubspot-inc-hubs-discusses-2026-strategy-and-ai-driven-innovations-for-growth-companies?source=feed_all_articles" target="_blank" rel="noopener">HubSpot, Inc. (HUBS) Discusses 2026 Strategy and AI-Driven Innovations for Growth Companies - Slideshow</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">CoinDesk</span>
+            <span class="article-time">04/15 23:08</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.coindesk.com/policy/2026/04/15/solana-policy-institute-backed-pac-spends-millions-to-jam-sherrod-brown-s-senate-run" target="_blank" rel="noopener">Solana Policy Institute-backed PAC spends millions to jam Sherrod Brown's Senate run</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
             <span class="article-source">Seeking Alpha</span>
             <span class="article-time">04/15 23:06</span>
         </div>
@@ -1697,10 +1830,34 @@
     <article class="article-card">
         <div class="article-header">
             <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 23:02</span>
+            <span class="article-time">04/15 23:04</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891070-vienna-insurance-group-ag-vnrfy-presents-at-zurs-investor-conference-2026-slideshow?source=feed_all_articles" target="_blank" rel="noopener">Vienna Insurance Group AG (VNRFY) Presents at Zürs Investor Conference 2026 - Slideshow</a>
+            <a href="https://seekingalpha.com/article/4891071-concurrent-technologies-plc-2025-q4-results-earnings-call-presentation?source=feed_all_articles" target="_blank" rel="noopener">Concurrent Technologies Plc 2025 Q4 - Results - Earnings Call Presentation</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+            </div>
+        </section>
+        
+        <section class="category-section">
+            <div class="category-header" style="border-color: #059669;">
+                <span class="category-icon">💱</span>
+                <h2 class="category-title">外匯市場</h2>
+                <span class="category-count" style="background: #059669;">20 篇</span>
+            </div>
+            <div class="articles-grid">
+                
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Forex</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/chfjpy-surges-back-to-highs-as-breakout-pressure-builds-200678448" target="_blank" rel="noopener">CHF/JPY Surges Back to Highs as Breakout Pressure Builds</a>
         </h3>
         
         
@@ -1709,11 +1866,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 23:01</span>
+            <span class="article-source">Investing.com Forex</span>
+            <span class="article-time">04/16 09:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4890953-rockwool-a-s-rcwly-shareholder-analyst-call-transcript?source=feed_all_articles" target="_blank" rel="noopener">Rockwool A/S (RCWLY) Shareholder/Analyst Call Transcript</a>
+            <a href="https://www.investing.com/analysis/usdcad-edges-higher-as-rate-cut-expectations-diverge-200678457" target="_blank" rel="noopener">USD/CAD Edges Higher as Rate Cut Expectations Diverge</a>
         </h3>
         
         
@@ -1722,11 +1879,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 23:01</span>
+            <span class="article-source">Investing.com Forex</span>
+            <span class="article-time">04/16 09:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891068-upm-kymmene-oyj-upmmy-shareholder-analyst-call-slideshow?source=feed_all_articles" target="_blank" rel="noopener">UPM-Kymmene Oyj (UPMMY) Shareholder/Analyst Call - Slideshow</a>
+            <a href="https://www.investing.com/analysis/fx-outlook-pushing-forward-into-deescalation-trades-200678470" target="_blank" rel="noopener">FX Outlook: Pushing Forward into De-Escalation Trades</a>
         </h3>
         
         
@@ -1735,11 +1892,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 23:00</span>
+            <span class="article-source">Investing.com Forex</span>
+            <span class="article-time">04/16 09:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891067-frp-holdings-inc-2025-q4-results-earnings-call-presentation?source=feed_all_articles" target="_blank" rel="noopener">FRP Holdings, Inc. 2025 Q4 - Results - Earnings Call Presentation</a>
+            <a href="https://www.investing.com/analysis/usdjpy-remains-capped-below-15900-20day-sma-in-focus-200678472" target="_blank" rel="noopener">USD/JPY Remains Capped Below 159.00, 20‑Day SMA in Focus</a>
         </h3>
         
         
@@ -1748,11 +1905,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">CoinDesk</span>
-            <span class="article-time">04/15 22:57</span>
+            <span class="article-source">Investing.com Forex</span>
+            <span class="article-time">04/16 09:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.coindesk.com/markets/2026/04/15/bitcoin-capped-at-usd75-000-as-nasdaq-and-s-and-p-500-fly-to-new-record-highs" target="_blank" rel="noopener">Bitcoin capped at $75,000 as Nasdaq and S&P 500 fly to new record highs</a>
+            <a href="https://www.investing.com/analysis/gold-in-positive-territory-as-external-backdrop-remains-supportive-200678489" target="_blank" rel="noopener">Gold in Positive Territory as External Backdrop Remains Supportive</a>
         </h3>
         
         
@@ -1761,24 +1918,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">MarketWatch</span>
-            <span class="article-time">04/15 22:57</span>
+            <span class="article-source">Investing.com Forex</span>
+            <span class="article-time">04/16 09:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.marketwatch.com/story/shes-a-smoker-my-mother-55-has-no-car-and-no-job-should-i-buy-her-life-insurance-e98caa2d?mod=mw_rss_topstories" target="_blank" rel="noopener">‘She’s a smoker’: My mother, 55, has no car and no job. Should I buy her life insurance?</a>
-        </h3>
-        
-        <div class="article-description">“My brothers and I are willing to split the cost of life insurance for her, if we can find a policy.”</div>
-        
-    </article>
-    
-    <article class="article-card">
-        <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 22:41</span>
-        </div>
-        <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891066-vivos-therapeutics-inc-vvos-q4-2025-earnings-call-transcript?source=feed_all_articles" target="_blank" rel="noopener">Vivos Therapeutics, Inc. (VVOS) Q4 2025 Earnings Call Transcript</a>
+            <a href="https://www.investing.com/analysis/usdjpy-how-much-further-will-the-us-dollar-fall-200678493" target="_blank" rel="noopener">USD/JPY: How Much Further Will the US Dollar Fall?</a>
         </h3>
         
         
@@ -1787,11 +1931,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 22:22</span>
+            <span class="article-source">Investing.com Forex</span>
+            <span class="article-time">04/16 09:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891061-vflo-free-cash-flow-plus-growth-winning-formula?source=feed_all_articles" target="_blank" rel="noopener">VFLO: Free Cash Flow + Growth Is A Winning Formula</a>
+            <a href="https://www.investing.com/analysis/gbpusd-under-pressure-as-us-dollar-firms-amid-geopolitical-uncertainty-200678501" target="_blank" rel="noopener">GBP/USD Under Pressure as US Dollar Firms Amid Geopolitical Uncertainty</a>
         </h3>
         
         
@@ -1800,11 +1944,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 22:21</span>
+            <span class="article-source">Investing.com Forex</span>
+            <span class="article-time">04/16 09:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4890975-koninklijke-kpn-n-v-kkpny-shareholder-analyst-call-transcript?source=feed_all_articles" target="_blank" rel="noopener">Koninklijke KPN N.V. (KKPNY) Shareholder/Analyst Call Transcript</a>
+            <a href="https://www.investing.com/analysis/us-dollar-is-poised-to-snap-losing-streak-200678503" target="_blank" rel="noopener">US Dollar Is Poised to Snap Losing Streak</a>
         </h3>
         
         
@@ -1813,11 +1957,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 22:21</span>
+            <span class="article-source">Investing.com Forex</span>
+            <span class="article-time">04/16 09:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891034-helvetia-baloise-holding-ag-hlvty-helvetia-holding-ag-analyst-investor-day-transcript?source=feed_all_articles" target="_blank" rel="noopener">Helvetia Baloise Holding AG (HLVTY) Helvetia Holding AG - Analyst/Investor Day Transcript</a>
+            <a href="https://www.investing.com/analysis/eurusd-sees-no-obstacles-to-growth-200678505" target="_blank" rel="noopener">EUR/USD Sees No Obstacles to Growth</a>
         </h3>
         
         
@@ -1826,11 +1970,11 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 22:18</span>
+            <span class="article-source">Investing.com Forex</span>
+            <span class="article-time">04/16 09:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891060-amd-why-its-a-hold-at-current-levels?source=feed_all_articles" target="_blank" rel="noopener">AMD: Why It's A 'Hold' At Current Levels</a>
+            <a href="https://www.investing.com/analysis/gbpjpy-approaches-final-leg-higher-within-channel-structure-200678517" target="_blank" rel="noopener">GBP/JPY Approaches Final Leg Higher Within Channel Structure</a>
         </h3>
         
         
@@ -1839,37 +1983,269 @@
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">CoinTelegraph</span>
-            <span class="article-time">04/15 22:15</span>
+            <span class="article-source">Forex Crunch</span>
+            <span class="article-time">02/02 08:37</span>
         </div>
         <h3 class="article-title">
-            <a href="https://cointelegraph.com/news/ether-open-interest-sees-26percent-increase-as-markets-rally-are-traders-into-eth-again?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound" target="_blank" rel="noopener">Ether open interest sees 26% increase as markets rally: Are traders into ETH again?</a>
+            <a href="https://www.forexcrunch.com/blog/2026/02/02/gold-price-analysis-pullback-accelerates-amid-fed-repricing-retail-liquidation/" target="_blank" rel="noopener">Gold Price Analysis: Pullback Accelerates Amid Fed Repricing, Retail Liquidation</a>
         </h3>
         
-        <div class="article-description">Institutional investors are buying Ether again, but a handful of factors could slow market momentum and negatively impact ETH’s rally.</div>
+        <div class="article-description">Gold price analysis suggests the probability of further downside as the stronger dollar weighs on the precious metal. The new Fed Chair nomination has triggered a wave of deeper retracement in gold after a strong rally. Gold’s structural support remains intact as central banks still buy, while US-Iran tension also maintains a safe-haven demand. Gold... The post Gold Price Analysis: Pullback Accelerates Amid Fed Repricing, Retail Liquidation appeared first on Forex Crunch .</div>
         
     </article>
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">MarketWatch</span>
-            <span class="article-time">04/15 22:13</span>
+            <span class="article-source">Forex Crunch</span>
+            <span class="article-time">02/02 05:36</span>
         </div>
         <h3 class="article-title">
-            <a href="https://www.marketwatch.com/story/microsofts-stock-has-sprung-back-to-life-its-on-its-strongest-run-in-3-years-by-one-measure-02b7e184?mod=mw_rss_topstories" target="_blank" rel="noopener">Microsoft’s stock has sprung back to life — and is on its strongest run in 3 years, by one measure</a>
+            <a href="https://www.forexcrunch.com/blog/2026/02/02/aud-usd-forecast-rba-decision-vs-hawkish-fed-risks-cap-near-term-upside/" target="_blank" rel="noopener">AUD/USD Forecast: RBA Decision vs Hawkish Fed Risks Cap Near-Term Upside</a>
         </h3>
         
-        <div class="article-description">After frustrating investors for months, Microsoft shares just clinched their best three-session performance since April 2023.</div>
+        <div class="article-description">The AUD/USD forecast edges to the downside despite a hotter inflation print as the yields fell sharply, suggesting only a single RBA hike in the near term. Trump’s nomination of Kevin Warsh as the next Fed Chair lifts the US dollar, as markets view the decision as less dovish. COT positioning suggests reduced AUD longs,... The post AUD/USD Forecast: RBA Decision vs Hawkish Fed Risks Cap Near-Term Upside appeared first on Forex Crunch .</div>
         
     </article>
     
     <article class="article-card">
         <div class="article-header">
-            <span class="article-source">Seeking Alpha</span>
-            <span class="article-time">04/15 22:11</span>
+            <span class="article-source">Forex Crunch</span>
+            <span class="article-time">01/31 10:34</span>
         </div>
         <h3 class="article-title">
-            <a href="https://seekingalpha.com/article/4891057-oklahoma-and-texas-could-boost-the-q1-performance-for-bok-financial?source=feed_all_articles" target="_blank" rel="noopener">Oklahoma And Texas Could Boost The Q1 Performance For BOK Financial</a>
+            <a href="https://www.forexcrunch.com/blog/2026/01/31/eur-usd-weekly-forecast-bulls-fading-from-multi-year-top-ahead-of-ecb-nfp/" target="_blank" rel="noopener">EUR/USD Weekly Forecast: Bulls Fading from Multi-Year Top Ahead of ECB, NFP</a>
+        </h3>
+        
+        <div class="article-description">The EUR/USD weekly forecast points to a corrective downside despite the pair ending the week with net gains, as the US dollar recovered slightly. Upbeat US PPI and the Fed’s hold in its recent meeting lent room to the falling dollar. The markets will closely watch the ECB rate decision and US employment data for... The post EUR/USD Weekly Forecast: Bulls Fading from Multi-Year Top Ahead of ECB, NFP appeared first on Forex Crunch .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Forex Crunch</span>
+            <span class="article-time">01/31 05:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.forexcrunch.com/blog/2026/01/31/gbp-usd-weekly-forecast-firm-usd-risks-break-of-1-37-eyes-on-boe-nfp/" target="_blank" rel="noopener">GBP/USD Weekly Forecast: Firm USD Risks Break of 1.37, Eyes on BoE, NFP</a>
+        </h3>
+        
+        <div class="article-description">The GBP/USD weekly forecast remains slightly subdued as the markets pared partial weekly gains amid dollar recovery and profit-taking. Fed’s data dependency and resilient UK economy continue to balance the GBP/USD. Market participants eye the US NFP and the BoE interest rate decision to gauge further directional bias. The GBP/USD price closed its second consecutive... The post GBP/USD Weekly Forecast: Firm USD Risks Break of 1.37, Eyes on BoE, NFP appeared first on Forex Crunch .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Forex Crunch</span>
+            <span class="article-time">01/30 08:23</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.forexcrunch.com/blog/2026/01/30/gold-outlook-strong-selling-amid-firm-dollar-ahead-of-us-ppi/" target="_blank" rel="noopener">Gold Outlook: Strong Selling Amid Firm Dollar Ahead of US PPI</a>
+        </h3>
+        
+        <div class="article-description">The gold outlook remains slightly deteriorated after a 4% plunge in a single session amid profit-taking. The structural demand for gold stays intact, with institutional targets set at $6,200 by mid-2026. Gold’s path could be bumpy depending on US macroeconomic data releases. Gold has been experiencing increased volatility after breaking the $5,500 barrier. The metal... The post Gold Outlook: Strong Selling Amid Firm Dollar Ahead of US PPI appeared first on Forex Crunch .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Forex Crunch</span>
+            <span class="article-time">01/30 07:27</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.forexcrunch.com/blog/2026/01/30/usd-jpy-price-holds-firm-as-markets-re-price-fed-and-boj-expectations/" target="_blank" rel="noopener">USD/JPY Price Holds Firm as Markets Re price Fed and BoJ Expectations</a>
+        </h3>
+        
+        <div class="article-description">USD/JPY price analysis tilts to the upside as the dollar recovers on the Fed hold and the US Senate approval to avoid a shutdown. BoJ remains highly accommodative, keeping the yield differential unattractive for yen buyers. FX intervention warnings keep yen losses in check. USD/JPY is consolidating after recent gains. The pair remains supported by... The post USD/JPY Price Holds Firm as Markets Re price Fed and BoJ Expectations appeared first on Forex Crunch .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Forex Crunch</span>
+            <span class="article-time">01/29 07:30</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.forexcrunch.com/blog/2026/01/29/gbp-usd-forecast-holds-bid-as-dollar-confidence-frays-1-3925-in-view/" target="_blank" rel="noopener">GBP/USD Forecast: Holds Bid as Dollar Confidence Frays; 1.3925 in View</a>
+        </h3>
+        
+        <div class="article-description">The GBP/USD forecast remains tilted to the upside, aiming for 1.3925 as the dollar loses further after the FOMC meeting. Despite the rates on hold and Powell’s reminder of higher inflation, the dollar could not find buyers amid Fed independence concerns. Option markets reveal the highest negative level since last May for GBP 3-month risk... The post GBP/USD Forecast: Holds Bid as Dollar Confidence Frays; 1.3925 in View appeared first on Forex Crunch .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Forex Crunch</span>
+            <span class="article-time">01/29 06:13</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.forexcrunch.com/blog/2026/01/29/aud-usd-outlook-bulls-continue-a-3-day-rally-amid-dovish-fed/" target="_blank" rel="noopener">AUD/USD Outlook: Bulls Continue a 3-day Rally Amid Dovish Fed</a>
+        </h3>
+        
+        <div class="article-description">The AUD/USD outlook remains strongly constructive as the dovish Fed further weakened the dollar, giving the pair another push to fresh highs. Elevated inflation in Australia supports the case of a hawkish RBA with two hikes in 2026. Technically, the pair remains supported as long as it stays above 0.7000. AUD/USD is trading near 0.7080... The post AUD/USD Outlook: Bulls Continue a 3-day Rally Amid Dovish Fed appeared first on Forex Crunch .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Forex Crunch</span>
+            <span class="article-time">01/28 06:55</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.forexcrunch.com/blog/2026/01/28/gbp-usd-forecast-eying-1-4000-amid-fed-independence-fears-ahead-of-fomc/" target="_blank" rel="noopener">GBP/USD Forecast: Eying 1.4000 Amid Fed Independence Fears Ahead of FOMC</a>
+        </h3>
+        
+        <div class="article-description">The GBP/USD forecast points to further gains to 1.4000 provided the Fed shows a dovish stance in today’s meeting. Sterling remains at an advantage against the dollar amid recent upbeat UK data, pushing the BoE to rethink its aggressive easing policy. Technically, the price remains in a strong uptrend with a risk of profit-taking before... The post GBP/USD Forecast: Eying 1.4000 Amid Fed Independence Fears Ahead of FOMC appeared first on Forex Crunch .</div>
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Forex Crunch</span>
+            <span class="article-time">01/28 06:13</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.forexcrunch.com/blog/2026/01/28/gold-price-analysis-eying-5300-amid-weak-dollar-geopolitics/" target="_blank" rel="noopener">Gold Price Analysis: Eying $5,300 Amid Weak Dollar, Geopolitics</a>
+        </h3>
+        
+        <div class="article-description">Gold price analysis suggests continued upside, with prices posting fresh record highs. Safe-haven demand and a weaker dollar maintain the bullish case for gold. Declining yields and dovish Fed expectations keep the gold dips attractive for buyers. Gold spot prices are at all-time highs amid strong safe-haven demand, a structurally weaker US dollar, and changing... The post Gold Price Analysis: Eying $5,300 Amid Weak Dollar, Geopolitics appeared first on Forex Crunch .</div>
+        
+    </article>
+    
+            </div>
+        </section>
+        
+        <section class="category-section">
+            <div class="category-header" style="border-color: #dc2626;">
+                <span class="category-icon">📊</span>
+                <h2 class="category-title">商品期貨</h2>
+                <span class="category-count" style="background: #dc2626;">10 篇</span>
+            </div>
+            <div class="articles-grid">
+                
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Commodities</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/stocks-rally-as-oil-slides-on-middle-east-ceasefire-hopes-us-dollar-weakens-200678475" target="_blank" rel="noopener">Stocks Rally as Oil Slides on Middle East Ceasefire Hopes, US Dollar Weakens</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Commodities</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/gold-silver-looking-toppy-after-explosive-run-higher-200678463" target="_blank" rel="noopener">Gold, Silver Looking Toppy After Explosive Run Higher</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Commodities</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/wti-crude-oil-outlook--key-levels-ahead-as-bearish-pressure-persists-200678478" target="_blank" rel="noopener">WTI Crude Oil Outlook – Key Levels Ahead as Bearish Pressure Persists</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Commodities</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/oil-trades-within-a-tight-structure-as-postppi-repricing-shapes-the-next-phase-200678467" target="_blank" rel="noopener">Oil Trades Within a Tight Structure as Post-PPI Repricing Shapes the Next Phase</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Commodities</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/gold-nears-key-breakout-test-as-bulls-target-next-fibonacci-level-200678494" target="_blank" rel="noopener">Gold Nears Key Breakout Test as Bulls Target Next Fibonacci Level</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Commodities</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/gold-near-4900-faces-profit-booking-as-volatility-spikes-200678511" target="_blank" rel="noopener">Gold Near $4,900 Faces Profit Booking as Volatility Spikes</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Commodities</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/the-100-barrel-is-back-trading-the-hormuz-havoc-200678520" target="_blank" rel="noopener">The $100 Barrel Is Back: Trading The Hormuz Havoc</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Commodities</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/gold-holds-firm--but-cracks-are-forming-beneath-the-surface-200678522" target="_blank" rel="noopener">Gold Holds Firm — But Cracks Are Forming Beneath the Surface</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Commodities</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/the-energy-report-gas-price-peak-200678527" target="_blank" rel="noopener">The Energy Report: Gas Price Peak</a>
+        </h3>
+        
+        
+        
+    </article>
+    
+    <article class="article-card">
+        <div class="article-header">
+            <span class="article-source">Investing.com Commodities</span>
+            <span class="article-time">04/16 09:34</span>
+        </div>
+        <h3 class="article-title">
+            <a href="https://www.investing.com/analysis/why-oil-refiners-are-the-real-winners-of-100-oil-prices-200678537" target="_blank" rel="noopener">Why Oil Refiners Are the Real Winners of $100 Oil Prices</a>
         </h3>
         
         
