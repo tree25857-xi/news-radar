@@ -20,6 +20,8 @@ CATEGORY_STYLE = {
 DEFAULT_STYLE = {"icon": "📰", "color": "#6b7280", "bg": "#f9fafb"}
 
 CATEGORY_STYLE["金融"] = {"icon": "💹", "color": "#f59e0b", "bg": "#422006"}
+CATEGORY_STYLE["外匯市場"] = {"icon": "💱", "color": "#059669", "bg": "#ecfdf5", "is_new": True}
+CATEGORY_STYLE["商品期貨"] = {"icon": "📊", "color": "#dc2626", "bg": "#fef2f2", "is_new": True}
 
 
 def generate_html(articles: List[Dict], output_path: str = "output/index.html",
@@ -129,6 +131,22 @@ def generate_html(articles: List[Dict], output_path: str = "output/index.html",
         
         .stat-badge:hover {{
             transform: translateY(-2px);
+        }}
+        
+        .new-badge {{
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: white;
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-left: 0.3rem;
+            animation: pulse 2s infinite;
+        }}
+        
+        @keyframes pulse {{
+            0%, 100% {{ opacity: 1; }}
+            50% {{ opacity: 0.7; }}
         }}
         
         .last-update {{
@@ -368,9 +386,11 @@ def _generate_stat_badges(stats: Dict) -> List[str]:
     badges = []
     for cat, count in stats.items():
         style = CATEGORY_STYLE.get(cat, DEFAULT_STYLE)
+        is_new = style.get("is_new", False)
+        new_label = ' <span class="new-badge">✨NEW</span>' if is_new else ''
         badges.append(
             f'<span class="stat-badge" style="background: {style["bg"]}; color: {style["color"]};">'
-            f'{style["icon"]} {cat}: {count}'
+            f'{style["icon"]} {cat}: {count}{new_label}'
             f'</span>'
         )
     return badges
@@ -379,7 +399,7 @@ def _generate_stat_badges(stats: Dict) -> List[str]:
 def _generate_category_sections(categorized: Dict) -> List[str]:
     """Generate category sections HTML"""
     sections = []
-    for cat in ["AI", "網路安全", "科技", "經濟", "國際", "金融"]:
+    for cat in ["AI", "網路安全", "科技", "經濟", "國際", "金融", "外匯市場", "商品期貨"]:
         articles = categorized.get(cat, [])
         if not articles:
             continue
