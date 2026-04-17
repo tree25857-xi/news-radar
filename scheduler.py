@@ -36,11 +36,16 @@ def run_update():
     articles = classify_articles(articles)
     
     # Step 3: Translate
-    logger.info("🌐 步驟 3/5: 翻譯標題...")
-    try:
-        articles = translate_articles(articles)
-    except Exception as e:
-        logger.warning(f"翻譯失敗: {e}")
+    skip_translate = os.environ.get("SKIP_TRANSLATION", "false").lower() in ("1", "true", "yes")
+    
+    if skip_translate:
+        logger.info("⏭️ 翻譯已跳過（SKIP_TRANSLATION=true）")
+    else:
+        logger.info("🌐 步驟 3/5: 翻譯標題...")
+        try:
+            articles = translate_articles(articles)
+        except Exception as e:
+            logger.warning(f"翻譯失敗: {e}")
     
     # Step 4: AI Summary (可選功能)
     logger.info("🤖 步驟 4/5: AI 生成摘要...")
