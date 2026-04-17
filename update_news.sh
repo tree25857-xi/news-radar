@@ -1,0 +1,1 @@
+/tmp/update_news.sh
