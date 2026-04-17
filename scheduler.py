@@ -80,7 +80,8 @@ def run_update():
     stats = Counter(a.get("predicted_category", a["category"]) for a in articles)
     stats = dict(stats)
     
-    output_path = os.path.join(os.path.dirname(__file__), "output", "index.html")
+    # 直接寫入根目錄 index.html（供 GitHub Pages 使用）
+    output_path = os.path.join(os.path.dirname(__file__), "index.html")
     generate_html(articles, output_path, stats)
     
     elapsed = (datetime.now() - start).total_seconds()
