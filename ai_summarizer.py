@@ -8,10 +8,13 @@ import requests
 import json
 import re
 
-API_KEY = os.environ.get('GEMINI_API_KEY')
-if not API_KEY:
-    raise ValueError("GEMINI_API_KEY 環境變數未設定")
 MODEL = "gemini-2.5-flash"
+
+def get_api_key():
+    key = os.environ.get('GEMINI_API_KEY')
+    if not key:
+        raise ValueError("GEMINI_API_KEY 環境變數未設定")
+    return key
 
 def generate_summary(news_items, category="一般"):
     """用 Gemini 生成新聞摘要"""
@@ -31,7 +34,7 @@ def generate_summary(news_items, category="一般"):
 {{"summary": "摘要文字", "tags": ["標籤1", "標籤2", "標籤3"]}}
 """
     
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={get_api_key()}"
     
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
