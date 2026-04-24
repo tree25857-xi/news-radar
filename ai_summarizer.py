@@ -8,8 +8,9 @@ import requests
 import json
 import re
 
-# 從環境變數讀取 API Key，預設值為直接設定（過渡期）
-API_KEY = os.environ.get('GEMINI_API_KEY', 'AIzaSyANsR1k6UEC6Sl1VvxDwJNufbPF9uZjXUA')
+API_KEY = os.environ.get('GEMINI_API_KEY')
+if not API_KEY:
+    raise ValueError("GEMINI_API_KEY 環境變數未設定")
 MODEL = "gemini-2.5-flash"
 
 def generate_summary(news_items, category="一般"):
